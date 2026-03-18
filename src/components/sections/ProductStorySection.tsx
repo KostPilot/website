@@ -277,7 +277,7 @@ export default function ProductStorySection() {
     return () => {
       observers.forEach((observer) => observer.disconnect());
     };
-  }, []);
+  }, [transitionToStep]);
 
   useEffect(() => {
     return () => {
