@@ -1,7 +1,7 @@
 import PhoneMockup from "@/components/shared/PhoneMockup";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 
-const DAYS = ["M", "TW", "TH", "FR", "SA", "SU"];
+const DAYS = ["M", "TU", "W", "TH", "FR", "SA", "SU"];
 const MEALS = [
   { name: "Avocado Toast", type: "Breakfast", color: "bg-[#e8f5e8]" },
   { name: "Quinoa Salad", type: "Lunch", color: "bg-[#fff3e0]" },
