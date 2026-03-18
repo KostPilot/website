@@ -8,8 +8,9 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Kostpilot",
-  description: "Meal planning and grocery flow",
+  title: "Kostpilot – Plan meals around supermarket deals",
+  description:
+    "Kostpilot turns weekly supermarket offers into a ready-made meal plan and smart shopping list.",
 };
 
 export default function RootLayout({
