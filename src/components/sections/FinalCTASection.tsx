@@ -42,7 +42,7 @@ function FinalPhoneMockupContent() {
               className={`relative h-28 bg-gradient-to-br ${deal.color}`}
             >
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="h-14 w-18 rounded-full bg-white/20" />
+                <div className="h-14 w-[72px] rounded-full bg-white/20" />
               </div>
               <span className="absolute right-2 top-2 rounded-md bg-[#e84c1e] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white">
                 {deal.badge}
