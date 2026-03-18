@@ -421,8 +421,13 @@ export default function ProductStorySection() {
                     key={step.id}
                     type="button"
                     onClick={() => {
+                      const prefersReducedMotion =
+                        typeof window !== "undefined" &&
+                        typeof window.matchMedia === "function" &&
+                        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
                       stepRefs.current[index]?.scrollIntoView({
-                        behavior: "smooth",
+                        behavior: prefersReducedMotion ? "auto" : "smooth",
                         block: "center",
                       });
                       transitionToStep(index);
