@@ -28,7 +28,7 @@ export default function ScrollReveal({
     const el = ref.current;
     if (!el) return;
 
-    let timer: ReturnType<typeof setTimeout>;
+    let timer: ReturnType<typeof setTimeout> | undefined;
     const prefersReducedMotion =
       window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 
@@ -66,7 +66,9 @@ export default function ScrollReveal({
 
     return () => {
       observer.disconnect();
-      clearTimeout(timer);
+      if (timer !== undefined) {
+        clearTimeout(timer);
+      }
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
