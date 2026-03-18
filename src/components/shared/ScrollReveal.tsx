@@ -70,7 +70,7 @@ export default function ScrollReveal({
         clearTimeout(timer);
       }
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [delay]);
 
   return (
     <div ref={ref} data-reveal-state="init" className={`reveal-init ${className}`}>
