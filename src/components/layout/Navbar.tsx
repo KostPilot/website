@@ -50,6 +50,8 @@ export default function Navbar() {
           className="flex h-9 w-9 items-center justify-center rounded-lg sm:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           <span className="flex flex-col gap-1.5">
             <span
@@ -67,7 +69,10 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-black/5 bg-[#f8f5f0] px-5 pb-5 sm:hidden">
+        <div
+          id="mobile-menu"
+          className="border-t border-black/5 bg-[#f8f5f0] px-5 pb-5 sm:hidden"
+        >
           <nav className="flex flex-col gap-4 pt-4">
             <a
               href="#how-it-works"
