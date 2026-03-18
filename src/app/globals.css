@@ -94,6 +94,7 @@ a {
   .reveal-init {
     opacity: 1;
     transform: none;
+    filter: none;
   }
 
   .reveal-done {
