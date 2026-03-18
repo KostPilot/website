@@ -1,11 +1,9 @@
-import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
-import CTA from "@/components/sections/CTA";
-import DealFlow from "@/components/sections/DealFlow";
-import GroceryList from "@/components/sections/GroceryList";
-import Hero from "@/components/sections/Hero";
-import HowItWorks from "@/components/sections/HowItWorks";
-import MealPlan from "@/components/sections/MealPlan";
+import CTA from "@/components/CTA";
+import DealFlow from "@/components/DealFlow";
+import GroceryList from "@/components/GroceryList";
+import Hero from "@/components/Hero";
+import MealPlan from "@/components/MealPlan";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
@@ -16,10 +14,8 @@ export default function Home() {
         <DealFlow />
         <MealPlan />
         <GroceryList />
-        <HowItWorks />
         <CTA />
       </main>
-      <Footer />
     </div>
   );
 }

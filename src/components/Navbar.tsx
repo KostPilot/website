@@ -10,8 +10,8 @@ export default function Navbar() {
           <a href="#meal-plan" className="hover:text-emerald-700">
             Meal plan
           </a>
-          <a href="#how-it-works" className="hover:text-emerald-700">
-            How it works
+          <a href="#grocery-list" className="hover:text-emerald-700">
+            Grocery list
           </a>
         </nav>
       </div>
