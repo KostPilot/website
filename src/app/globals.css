@@ -79,6 +79,10 @@ a {
 
 /* ── Prefers reduced motion ────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .hero-badge,
   .hero-heading,
   .hero-body,
