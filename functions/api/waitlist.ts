@@ -180,16 +180,6 @@ let email = "";
     return jsonResponse({ message: "Indtast en gyldig e-mailadresse." }, 400);
   }
 
-  return jsonResponse(
-    {
-      message: "DEBUG REACHED AFTER EMAIL VALIDATION",
-      email,
-      table: config.table,
-      schema: config.schema,
-    },
-    200,
-  );
-
   const query = new URLSearchParams({
     select: config.emailColumn,
     limit: "1",
