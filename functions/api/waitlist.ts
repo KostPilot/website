@@ -165,6 +165,9 @@ if (!config.url || !config.serviceRoleKey) {
   );
 }
 
+const supabaseUrl = config.url;
+const serviceRoleKey = config.serviceRoleKey;
+
 let email = "";
   try {
     const payload = (await request.json()) as { email?: string };
@@ -194,9 +197,9 @@ let email = "";
   });
 
   const duplicateResponse = await fetch(
-    `${config.url}/rest/v1/${config.table}?${query.toString()}`,
+    `${supabaseUrl}/rest/v1/${config.table}?${query.toString()}`,
     {
-      headers: createSupabaseHeaders(config.serviceRoleKey, config.schema),
+      headers: createSupabaseHeaders(serviceRoleKey, config.schema),
     },
   );
 
@@ -227,14 +230,16 @@ let email = "";
     [config.emailColumn]: email,
   };
 
-  if (config.sourceColumn) {
-    insertPayload[config.sourceColumn] = config.sourceValue;
+  const sourceColumn = config.sourceColumn;
+
+  if (sourceColumn) {
+    insertPayload[sourceColumn as string] = config.sourceValue;
   }
 
-  const insertResponse = await fetch(`${config.url}/rest/v1/${config.table}`, {
+  const insertResponse = await fetch(`${supabaseUrl}/rest/v1/${config.table}`, {
     method: "POST",
     headers: {
-      ...createSupabaseHeaders(config.serviceRoleKey, config.schema, true),
+      ...createSupabaseHeaders(serviceRoleKey, config.schema, true),
       "Content-Type": "application/json",
       Prefer: "return=minimal",
     },
