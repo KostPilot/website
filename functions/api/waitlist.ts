@@ -8,6 +8,9 @@ type WaitlistEnv = {
   SUPABASE_WAITLIST_SOURCE_COLUMN?: string;
   SUPABASE_WAITLIST_SOURCE_VALUE?: string;
   SUPABASE_SCHEMA?: string;
+  RATE_LIMITING_ENABLED?: string;
+  RATE_LIMIT_REQUESTS?: string;
+  RATE_LIMIT_WINDOW_MS?: string;
 };
 
 type PagesFunctionContext = {
@@ -20,6 +23,60 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
+
+const ipRateLimitStore = new Map<string, { count: number; resetAt: number }>();
+
+function getClientIp(request: Request) {
+  const cfIp = request.headers.get("CF-Connecting-IP");
+
+  if (cfIp) {
+    return cfIp;
+  }
+
+  const forwarded = request.headers.get("x-forwarded-for");
+
+  if (!forwarded) {
+    return "unknown";
+  }
+
+  return forwarded.split(",")[0]?.trim() || "unknown";
+}
+
+function isRateLimited(
+  ip: string,
+  limit: number,
+  windowMs: number,
+) {
+  const now = Date.now();
+  const current = ipRateLimitStore.get(ip);
+
+  if (!current || now >= current.resetAt) {
+    ipRateLimitStore.set(ip, { count: 1, resetAt: now + windowMs });
+    return false;
+  }
+
+  current.count += 1;
+
+  if (current.count > limit) {
+    return true;
+  }
+
+  return false;
+}
+
+function shouldApplyRateLimit(env: WaitlistEnv) {
+  return (env.RATE_LIMITING_ENABLED ?? "true").toLowerCase() !== "false";
+}
+
+function getRateLimitConfig(env: WaitlistEnv) {
+  const parsedLimit = Number.parseInt(env.RATE_LIMIT_REQUESTS ?? "5", 10);
+  const parsedWindow = Number.parseInt(env.RATE_LIMIT_WINDOW_MS ?? "60000", 10);
+
+  return {
+    limit: Number.isFinite(parsedLimit) && parsedLimit > 0 ? parsedLimit : 5,
+    windowMs: Number.isFinite(parsedWindow) && parsedWindow > 0 ? parsedWindow : 60000,
+  };
+}
 
 function jsonResponse(body: Record<string, string>, status: number) {
   return new Response(JSON.stringify(body), {
@@ -66,6 +123,19 @@ export function onRequestOptions() {
 
 export async function onRequestPost({ request, env }: PagesFunctionContext) {
   const config = getSupabaseConfig(env);
+
+  // Best-effort in-function throttle. Keep Cloudflare dashboard rate limiting enabled too.
+  if (shouldApplyRateLimit(env)) {
+    const clientIp = getClientIp(request);
+    const { limit, windowMs } = getRateLimitConfig(env);
+
+    if (isRateLimited(clientIp, limit, windowMs)) {
+      return jsonResponse(
+        { message: "For mange forespørgsler. Prøv igen om lidt." },
+        429,
+      );
+    }
+  }
 
   if (!config.url || !config.serviceRoleKey) {
     return jsonResponse({ message: "Ventelisten er ikke konfigureret endnu." }, 500);
