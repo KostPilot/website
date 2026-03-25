@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import PhoneMockup from "@/components/shared/PhoneMockup";
 
@@ -8,214 +9,39 @@ type StoryStep = {
   title: string;
   description: string;
   label: string;
+  screenSrc: string;
+  screenAlt: string;
 };
 
 const STORY_STEPS: StoryStep[] = [
   {
     id: 0,
-    title: "Start with supermarket deals",
+    title: "Start med ugens tilbud",
     description:
-      "Kostpilot scans weekly offers and surfaces realistic meal options with clear prices, discounts, and store details.",
-    label: "Deals",
+      "Kostpilot samler butikkernes tilbud ét sted og viser dig præcis, hvad du faktisk kan lave mad af den uge.",
+    label: "Tilbud",
+    screenSrc: "/app-screens/offers.svg",
+    screenAlt: "Tilbudsskærm med ugens tilbud og filtre",
   },
   {
     id: 1,
-    title: "Build your weekly meal plan",
+    title: "Byg en madplan der passer til dig",
     description:
-      "Pick your preferences, review suggestions, and generate a practical week of meals anchored to those deals.",
-    label: "Meal Plan",
+      "Dine præferencer omsættes til en madplan, så du hurtigt kan vælge retter og justere dem med få tryk.",
+    label: "Madplan",
+    screenSrc: "/app-screens/meal-plan.svg",
+    screenAlt: "Madplan med ugens måltider og valg for denne uge",
   },
   {
     id: 2,
-    title: "Finish with one grocery list",
+    title: "Afslut med én samlet indkøbsliste",
     description:
-      "Everything from your selected meals is organized into one efficient list so one trip to the store is enough.",
-    label: "Grocery List",
+      "Når planen er klar, får du en indkøbsliste med budget og butiksfordeling, så turen i butikken bliver enkel.",
+    label: "Indkøbsliste",
+    screenSrc: "/app-screens/shopping-list.svg",
+    screenAlt: "Indkøbsliste med budget og oversigt over butikker",
   },
 ];
-
-function DealsState() {
-  return (
-    <div className="flex h-[520px] flex-col bg-[#faf9f7]">
-      <div className="flex items-center justify-between bg-white px-4 py-3 shadow-sm">
-        <div>
-          <p className="text-[9px] font-medium uppercase tracking-widest text-[#999]">
-            This week
-          </p>
-          <p className="text-[12px] font-bold text-[#111]">Daily Deals</p>
-        </div>
-        <div className="rounded-full bg-[#fef1ec] px-2 py-1 text-[10px] font-semibold text-[#e84c1e]">
-          128 offers
-        </div>
-      </div>
-
-      <div className="flex gap-2 bg-white px-4 pb-2 pt-1">
-        {[
-          { text: "All", active: true },
-          { text: "Meat", active: false },
-          { text: "Veg", active: false },
-          { text: "Fish", active: false },
-        ].map((chip) => (
-          <span
-            key={chip.text}
-            className={`rounded-full px-2.5 py-1 text-[9px] font-semibold ${
-              chip.active ? "bg-[#e84c1e] text-white" : "bg-[#f0ede8] text-[#777]"
-            }`}
-          >
-            {chip.text}
-          </span>
-        ))}
-      </div>
-
-      <div className="flex-1 space-y-2 overflow-hidden px-3 py-2">
-        {[
-          {
-            name: "Creamy Tomato Rigatoni",
-            store: "Grocery Store A",
-            price: "£4.90",
-            old: "£7.13",
-            off: "30% OFF",
-          },
-          {
-            name: "Lemon Herb Chicken",
-            store: "Grocery Store B",
-            price: "£6.74",
-            old: "£8.99",
-            off: "25% OFF",
-          },
-          {
-            name: "Teriyaki Salmon Bowl",
-            store: "Grocery Store C",
-            price: "£5.59",
-            old: "£6.99",
-            off: "20% OFF",
-          },
-        ].map((deal) => (
-          <article
-            key={deal.name}
-            className="flex gap-3 rounded-xl border border-[#f0ede8] bg-white p-2.5 shadow-sm"
-          >
-            <div className="h-14 w-14 shrink-0 rounded-lg bg-gradient-to-br from-[#f5e0cc] to-[#eac9a8]" />
-            <div className="flex flex-1 flex-col justify-between">
-              <div>
-                <h4 className="text-[10px] font-semibold text-[#111]">{deal.name}</h4>
-                <p className="text-[8px] text-[#aaa]">{deal.store}</p>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-[11px] font-bold text-[#111]">{deal.price}</span>
-                  <span className="text-[8px] text-[#bbb] line-through">{deal.old}</span>
-                </div>
-                <span className="rounded-md bg-[#fef1ec] px-1.5 py-0.5 text-[8px] font-bold text-[#e84c1e]">
-                  {deal.off}
-                </span>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function MealPlanState() {
-  return (
-    <div className="flex h-[520px] flex-col bg-[#faf9f7]">
-      <div className="flex items-center justify-between bg-white px-4 py-3 shadow-sm">
-        <div>
-          <p className="text-[9px] font-medium uppercase tracking-widest text-[#999]">
-            Generated
-          </p>
-          <p className="text-[12px] font-bold text-[#111]">Weekly Meal Plan</p>
-        </div>
-        <div className="text-[12px]">🍽️</div>
-      </div>
-
-      <div className="flex gap-1.5 bg-white px-3 pb-3 pt-1">
-        {["M", "T", "W", "T", "F", "S", "S"].map((day, i) => (
-          <span
-            key={`${day}-${i}`}
-            className={`flex h-6 w-6 items-center justify-center rounded-full text-[8px] font-bold ${
-              i < 4
-                ? "border border-[#e84c1e] text-[#e84c1e]"
-                : "bg-[#f0ede8] text-[#aaa]"
-            }`}
-          >
-            {day}
-          </span>
-        ))}
-      </div>
-
-      <div className="flex-1 space-y-2 overflow-hidden px-3 pb-3">
-        {[
-          { day: "Monday", meal: "Rigatoni + side salad", type: "Dinner" },
-          { day: "Tuesday", meal: "Chicken wraps", type: "Lunch" },
-          { day: "Wednesday", meal: "Teriyaki salmon bowl", type: "Dinner" },
-          { day: "Thursday", meal: "Greek yogurt bowl", type: "Breakfast" },
-          { day: "Friday", meal: "Pasta bake", type: "Dinner" },
-        ].map((entry) => (
-          <article
-            key={entry.day}
-            className="rounded-lg border border-[#f0ede8] bg-white px-3 py-2"
-          >
-            <p className="text-[8px] font-semibold uppercase tracking-wide text-[#999]">
-              {entry.day}
-            </p>
-            <h4 className="text-[10px] font-semibold text-[#111]">{entry.meal}</h4>
-            <p className="text-[8px] text-[#aaa]">{entry.type}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function GroceryListState() {
-  return (
-    <div className="flex h-[520px] flex-col bg-[#faf9f7]">
-      <div className="flex items-center justify-between bg-white px-4 py-3 shadow-sm">
-        <h4 className="text-[12px] font-bold text-[#111]">Grocery List</h4>
-        <span className="rounded-full bg-[#fef1ec] px-2 py-1 text-[9px] font-semibold text-[#e84c1e]">
-          $43.60
-        </span>
-      </div>
-
-      <div className="flex-1 space-y-2 overflow-hidden px-3 py-3">
-        {[
-          {
-            category: "Produce",
-            items: ["Bananas", "Avocados", "Spinach"],
-          },
-          {
-            category: "Dairy & Refrigerated",
-            items: ["Milk", "Eggs"],
-          },
-          {
-            category: "Pantry & Staples",
-            items: ["Pasta", "Canned tomatoes", "Olive oil"],
-          },
-        ].map((group) => (
-          <section
-            key={group.category}
-            className="rounded-lg border border-[#f0ede8] bg-white px-3 py-2"
-          >
-            <p className="text-[8px] font-bold uppercase tracking-wide text-[#e84c1e]">
-              {group.category}
-            </p>
-            <ul className="mt-1 space-y-1">
-              {group.items.map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-[3px] border border-[#e84c1e] bg-[#fef1ec]" />
-                  <span className="text-[9px] text-[#444]">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function ProductStorySection() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -287,20 +113,15 @@ export default function ProductStorySection() {
     };
   }, []);
 
-  const phoneStates = useMemo(
-    () => [<DealsState key="deals" />, <MealPlanState key="plan" />, <GroceryListState key="list" />],
-    [],
-  );
-
   return (
     <section id="product-story" className="bg-[#f8f5f0] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
         <header className="mb-10 lg:mb-14">
           <p className="text-[11px] font-semibold uppercase tracking-widest text-[#e84c1e]">
-            Interactive Product Story
+            Sådan hænger det sammen
           </p>
           <h2 className="mt-3 max-w-xl text-[clamp(1.9rem,4vw,3rem)] font-bold leading-[1.08] tracking-[-0.02em] text-[#111]">
-            Follow one journey from discount to dinner plan
+            Følg turen fra tilbud til en færdig ugeplan
           </h2>
         </header>
 
@@ -352,7 +173,7 @@ export default function ProductStorySection() {
                         isCurrent ? "text-[#e84c1e]" : "text-[#9a9a9a]"
                       }`}
                     >
-                      {`Step ${index + 1} · ${step.label}`}
+                      {`Trin ${index + 1} · ${step.label}`}
                     </p>
                     <h3 className="mt-3 text-[clamp(1.25rem,2.2vw,1.7rem)] font-bold leading-[1.15] tracking-[-0.015em] text-[#111]">
                       {step.title}
@@ -369,8 +190,8 @@ export default function ProductStorySection() {
           <div className="lg:sticky lg:top-24">
             <div className="flex flex-col items-center gap-5">
               <PhoneMockup>
-                <div className="relative h-[520px] overflow-hidden bg-[#faf9f7]">
-                  {phoneStates.map((state, index) => {
+                <div className="relative h-[606px] overflow-hidden bg-[#faf9f7] sm:h-[648px]">
+                  {STORY_STEPS.map((step, index) => {
                     const isCurrent = currentStep === index;
                     const isPrevious = previousStep === index;
 
@@ -408,7 +229,13 @@ export default function ProductStorySection() {
                         }}
                         aria-hidden={!isCurrent && !isPrevious}
                       >
-                        {state}
+                        <Image
+                          src={step.screenSrc}
+                          alt={step.screenAlt}
+                          fill
+                          sizes="300px"
+                          className="object-cover object-top"
+                        />
                       </div>
                     );
                   })}
@@ -435,7 +262,7 @@ export default function ProductStorySection() {
                     className={`relative h-2.5 rounded-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                       currentStep === index ? "w-7 bg-[#e84c1e]" : "w-2.5 bg-[#d4cdc4]"
                     }`}
-                    aria-label={`Go to ${step.label}`}
+                    aria-label={`Gå til ${step.label}`}
                     aria-pressed={currentStep === index}
                   />
                 ))}
