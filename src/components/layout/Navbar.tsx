@@ -29,19 +29,19 @@ export default function Navbar() {
             href="#how-it-works"
             className="text-sm font-medium text-[#555] transition-colors hover:text-[#111]"
           >
-            How it works
+            Sådan virker det
           </a>
           <a
             href="#deals"
             className="text-sm font-medium text-[#555] transition-colors hover:text-[#111]"
           >
-            Features
+            Funktioner
           </a>
           <a
             href="#final-cta"
             className="inline-flex items-center justify-center rounded-full bg-[#e84c1e] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#c73d14]"
           >
-            Get early access
+            Skriv dig op
           </a>
         </nav>
 
@@ -79,21 +79,21 @@ export default function Navbar() {
               className="text-sm font-medium text-[#555]"
               onClick={() => setOpen(false)}
             >
-              How it works
+              Sådan virker det
             </a>
             <a
               href="#deals"
               className="text-sm font-medium text-[#555]"
               onClick={() => setOpen(false)}
             >
-              Features
+              Funktioner
             </a>
             <a
               href="#final-cta"
               className="inline-flex w-fit items-center justify-center rounded-full bg-[#e84c1e] px-5 py-2.5 text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >
-              Get early access
+              Skriv dig op
             </a>
           </nav>
         </div>

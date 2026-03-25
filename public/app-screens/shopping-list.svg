@@ -1,0 +1,54 @@
+<svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="390" height="844" fill="#FFFFFF"/>
+  <text x="28" y="36" fill="#111111" font-family="Arial, sans-serif" font-size="18" font-weight="700">21.38</text>
+  <rect x="120" y="12" width="150" height="34" rx="17" fill="#0B0B0B"/>
+  <text x="18" y="86" fill="#111111" font-family="Arial, sans-serif" font-size="27" font-weight="700">Indkøbsliste</text>
+  <text x="18" y="112" fill="#737373" font-family="Arial, sans-serif" font-size="15">33 af 36 varer · Total: 32 kr</text>
+  <circle cx="362" cy="82" r="20" fill="#FF8A1C"/>
+  <g transform="translate(18 138)">
+    <rect width="354" height="116" rx="20" fill="#FFFFFF" stroke="#EFE9E1"/>
+    <text x="18" y="34" fill="#333333" font-family="Arial, sans-serif" font-size="16" font-weight="700">Ugentligt budget</text>
+    <text x="18" y="66" fill="#FF8A1C" font-family="Arial, sans-serif" font-size="22" font-weight="700">31.65 kr</text>
+    <text x="120" y="66" fill="#666666" font-family="Arial, sans-serif" font-size="17">/ 800 kr</text>
+    <rect x="18" y="82" width="224" height="10" rx="5" fill="#EEF0EC"/>
+    <rect x="18" y="82" width="16" height="10" rx="5" fill="#68B86B"/>
+    <text x="18" y="106" fill="#67B56B" font-family="Arial, sans-serif" font-size="14">✓ 768 kr tilbage</text>
+    <circle cx="304" cy="58" r="32" fill="#FFFFFF" stroke="#E8E1D9" stroke-width="8"/>
+    <path d="M304 26 A32 32 0 0 1 314 28" stroke="#FF8A1C" stroke-width="8" stroke-linecap="round"/>
+    <text x="288" y="64" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="20" font-weight="700">4%</text>
+  </g>
+  <g transform="translate(18 278)">
+    <rect width="166" height="50" rx="14" fill="#FFFFFF" stroke="#D8D1C8" stroke-width="2"/>
+    <text x="42" y="31" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="16">Efter kategori</text>
+    <rect x="188" width="166" height="50" rx="14" fill="#F4FFF2" stroke="#62BF6C" stroke-width="2"/>
+    <text x="240" y="31" fill="#62BF6C" font-family="Arial, sans-serif" font-size="16" font-weight="700">Efter butik</text>
+  </g>
+  <g transform="translate(18 356)">
+    <rect width="354" height="150" rx="20" fill="#FFFFFF" stroke="#EFE9E1"/>
+    <text x="18" y="34" fill="#333333" font-family="Arial, sans-serif" font-size="17" font-weight="700">Butiksoversigt</text>
+    <text x="18" y="72" fill="#FFB272" font-family="Arial, sans-serif" font-size="14" font-weight="700">1</text>
+    <text x="42" y="72" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="16">Netto (24)</text>
+    <text x="262" y="72" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="16">269.9 kr</text>
+    <text x="18" y="100" fill="#FFB272" font-family="Arial, sans-serif" font-size="14" font-weight="700">2</text>
+    <text x="42" y="100" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="16">Føtex (3)</text>
+    <text x="274" y="100" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="16">62.5 kr</text>
+    <text x="18" y="128" fill="#FFB272" font-family="Arial, sans-serif" font-size="14" font-weight="700">3</text>
+    <text x="42" y="128" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="16">Lidl (5)</text>
+    <text x="296" y="128" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="16">25 kr</text>
+  </g>
+  <text x="18" y="560" fill="#62BF6C" font-family="Arial, sans-serif" font-size="22" font-weight="700">Netto</text>
+  <text x="284" y="560" fill="#62BF6C" font-family="Arial, sans-serif" font-size="22" font-weight="700">269.9 kr</text>
+  <g transform="translate(18 588)">
+    <rect width="354" height="84" rx="18" fill="#FFFFFF" stroke="#EFE9E1"/>
+    <rect x="16" y="22" width="24" height="24" rx="6" fill="#B9E5BD"/>
+    <text x="18" y="40" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="700">✓</text>
+    <text x="56" y="38" fill="#8B8B8B" font-family="Arial, sans-serif" font-size="16" text-decoration="line-through">Salt</text>
+    <text x="56" y="58" fill="#B0B0B0" font-family="Arial, sans-serif" font-size="14">3 · Krydderier</text>
+    <text x="284" y="46" fill="#8BC98F" font-family="Arial, sans-serif" font-size="16">6.65 kr</text>
+  </g>
+  <rect x="0" y="770" width="390" height="74" fill="#FFFFFF"/>
+  <text x="48" y="808" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="14" font-weight="700">Hjem</text>
+  <text x="132" y="808" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="14">Kalender</text>
+  <text x="212" y="808" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="14">Opskrifter</text>
+  <text x="314" y="808" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="14">Profil</text>
+</svg>

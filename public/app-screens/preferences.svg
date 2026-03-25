@@ -1,0 +1,56 @@
+<svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="390" height="844" fill="#F7F4EF"/>
+  <rect x="0" y="0" width="390" height="58" fill="#FFFFFF"/>
+  <text x="28" y="36" fill="#111111" font-family="Arial, sans-serif" font-size="18" font-weight="700">15.09</text>
+  <rect x="120" y="12" width="150" height="34" rx="17" fill="#0B0B0B"/>
+  <circle cx="320" cy="30" r="4" fill="#D8D0C8"/>
+  <circle cx="334" cy="30" r="4" fill="#D8D0C8"/>
+  <circle cx="348" cy="30" r="4" fill="#D8D0C8"/>
+  <g transform="translate(18 74)">
+    <rect width="354" height="86" rx="24" fill="#FFFFFF"/>
+    <text x="22" y="34" fill="#FF8E2B" font-family="Arial, sans-serif" font-size="22">✂</text>
+    <text x="48" y="33" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="17" font-weight="700">Madpræferencer</text>
+    <text x="48" y="60" fill="#6D6D6D" font-family="Arial, sans-serif" font-size="15">omnivore · Ingen allergier</text>
+    <path d="M320 43 L334 30 L320 17" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(18 180)">
+    <rect width="354" height="92" rx="24" fill="#FFFFFF"/>
+    <text x="22" y="36" fill="#FF665F" font-family="Arial, sans-serif" font-size="21">!</text>
+    <text x="48" y="35" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="17" font-weight="700">Allergier &amp; dislikes</text>
+    <text x="22" y="66" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="15">Ingen allergier registreret</text>
+    <path d="M320 46 L334 33 L320 20" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(18 292)">
+    <rect width="354" height="92" rx="24" fill="#FFFFFF"/>
+    <text x="20" y="36" fill="#FF9B3D" font-family="Arial, sans-serif" font-size="20">⌘</text>
+    <text x="48" y="35" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="17" font-weight="700">Kropsmål &amp; fitnessmål</text>
+    <text x="22" y="66" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="15">Højde, vægt, aktivitetsniveau &amp; mål</text>
+    <path d="M320 46 L334 33 L320 20" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(18 404)">
+    <rect width="354" height="92" rx="24" fill="#FFFFFF"/>
+    <text x="20" y="36" fill="#7BC47F" font-family="Arial, sans-serif" font-size="20">↗</text>
+    <text x="48" y="35" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="17" font-weight="700">Vægt tracker</text>
+    <text x="22" y="66" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="15">Se din vægtudvikling over tid</text>
+    <path d="M320 46 L334 33 L320 20" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(18 516)">
+    <rect width="354" height="92" rx="24" fill="#FFFFFF"/>
+    <text x="20" y="36" fill="#FF9B3D" font-family="Arial, sans-serif" font-size="20">◔</text>
+    <text x="48" y="35" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="17" font-weight="700">Kalorier &amp; makroer</text>
+    <text x="22" y="66" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="15">Beregnes automatisk fra kropsmål</text>
+    <path d="M320 46 L334 33 L320 20" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(18 628)">
+    <rect width="354" height="92" rx="24" fill="#FFFFFF"/>
+    <text x="20" y="36" fill="#66BB6A" font-family="Arial, sans-serif" font-size="20">⌂</text>
+    <text x="48" y="35" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="17" font-weight="700">Husstand</text>
+    <text x="22" y="66" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="15">2 personer · 3 måltider/dag</text>
+    <path d="M320 46 L334 33 L320 20" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="0" y="770" width="390" height="74" fill="#FFFFFF"/>
+  <text x="46" y="808" fill="#4A4A4A" font-family="Arial, sans-serif" font-size="14" font-weight="700">Hjem</text>
+  <text x="130" y="808" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="14">Kalender</text>
+  <text x="214" y="808" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="14">Opskrifter</text>
+  <text x="314" y="808" fill="#7A7A7A" font-family="Arial, sans-serif" font-size="14">Profil</text>
+</svg>

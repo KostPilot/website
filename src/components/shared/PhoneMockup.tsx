@@ -1,11 +1,21 @@
+import Image from "next/image";
 import React from "react";
 
 interface PhoneMockupProps {
   children: React.ReactNode;
   className?: string;
+  screenSrc?: string;
+  screenAlt?: string;
+  priority?: boolean;
 }
 
-export default function PhoneMockup({ children, className = "" }: PhoneMockupProps) {
+export default function PhoneMockup({
+  children,
+  className = "",
+  screenSrc,
+  screenAlt = "",
+  priority = false,
+}: PhoneMockupProps) {
   return (
     <div
       className={`relative mx-auto w-[280px] shrink-0 sm:w-[300px] ${className}`}
@@ -20,7 +30,18 @@ export default function PhoneMockup({ children, className = "" }: PhoneMockupPro
 
         {/* Screen */}
         <div className="overflow-hidden rounded-b-[34px] bg-white">
-          {children}
+          {screenSrc ? (
+            <Image
+              src={screenSrc}
+              alt={screenAlt}
+              width={390}
+              height={844}
+              priority={priority}
+              className="block h-auto w-full"
+            />
+          ) : (
+            children
+          )}
         </div>
 
         {/* Home indicator */}
