@@ -19,7 +19,7 @@ export default function Footer() {
             </span>
           </a>
           <p className="max-w-xs text-sm text-[#888]">
-            Plan meals around supermarket deals. Save money, save time.
+            Planlæg måltider ud fra butikkernes tilbud. Spar penge og tid.
           </p>
         </div>
 
@@ -30,19 +30,19 @@ export default function Footer() {
               href="#how-it-works"
               className="text-sm text-[#666] transition-colors hover:text-[#111]"
             >
-              How it works
+              Sådan virker det
             </a>
             <a
               href="#deals"
               className="text-sm text-[#666] transition-colors hover:text-[#111]"
             >
-              Features
+              Funktioner
             </a>
             <a
               href="#final-cta"
               className="text-sm text-[#666] transition-colors hover:text-[#111]"
             >
-              Early access
+              Venteliste
             </a>
           </div>
           <a
@@ -57,7 +57,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-black/5 px-5 py-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs text-[#aaa]">
-          © {new Date().getFullYear()} Kostpilot. All rights reserved.
+          © {new Date().getFullYear()} Kostpilot. Alle rettigheder forbeholdes.
         </p>
       </div>
     </footer>

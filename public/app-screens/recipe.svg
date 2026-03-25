@@ -1,0 +1,41 @@
+<svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="390" height="844" fill="#FFFFFF"/>
+  <text x="28" y="36" fill="#111111" font-family="Arial, sans-serif" font-size="18" font-weight="700">15.16</text>
+  <rect x="120" y="12" width="150" height="34" rx="17" fill="#0B0B0B"/>
+  <rect y="58" width="390" height="266" fill="#ECE3DB"/>
+  <ellipse cx="188" cy="180" rx="146" ry="104" fill="#FAFAFA"/>
+  <ellipse cx="188" cy="180" rx="122" ry="84" fill="#FFF8F0" stroke="#D5CEC6" stroke-width="3"/>
+  <ellipse cx="126" cy="185" rx="30" ry="34" fill="#F6D85C"/>
+  <ellipse cx="176" cy="181" rx="30" ry="34" fill="#F6D85C"/>
+  <ellipse cx="246" cy="164" rx="46" ry="30" fill="#B56C4E"/>
+  <path d="M110 208 C150 160 210 160 250 208" stroke="#7FB870" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="32" cy="94" r="18" fill="#6F6F6F" fill-opacity="0.65"/>
+  <path d="M37 94 H27" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M31 88 L25 94 L31 100" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="358" cy="94" r="18" fill="#6F6F6F" fill-opacity="0.65"/>
+  <path d="M352 88 C356 82 364 82 368 88 C372 94 364 102 358 106 C352 102 344 94 348 88 C350 84 352 83 352 88Z" stroke="#FFFFFF" stroke-width="2.2" fill="none"/>
+  <text x="24" y="388" fill="#111111" font-family="Arial, sans-serif" font-size="28" font-weight="700">Stegt flæsk med</text>
+  <text x="24" y="424" fill="#111111" font-family="Arial, sans-serif" font-size="28" font-weight="700">persillesovs</text>
+  <text x="24" y="462" fill="#666666" font-family="Arial, sans-serif" font-size="16">Sprødt stegt flæsk med cremet persillesovs og</text>
+  <text x="24" y="484" fill="#666666" font-family="Arial, sans-serif" font-size="16">kartofler. Danmarks nationalret.</text>
+  <text x="24" y="530" fill="#FF9B3D" font-family="Arial, sans-serif" font-size="14" font-weight="700">◷ 75 min</text>
+  <text x="114" y="530" fill="#72BC7D" font-family="Arial, sans-serif" font-size="14" font-weight="700">◔ 750 kcal</text>
+  <text x="216" y="530" fill="#FF9B3D" font-family="Arial, sans-serif" font-size="14" font-weight="700">◉ 95 kr</text>
+  <text x="300" y="530" fill="#72BC7D" font-family="Arial, sans-serif" font-size="14" font-weight="700">▥ nem</text>
+  <g transform="translate(24 556)">
+    <rect width="342" height="82" rx="20" fill="#FBF6F0"/>
+    <text x="18" y="34" fill="#222222" font-family="Arial, sans-serif" font-size="17" font-weight="700">Portioner</text>
+    <circle cx="246" cy="34" r="18" fill="#FFE7D3"/>
+    <text x="240" y="40" fill="#FF8A1C" font-family="Arial, sans-serif" font-size="20" font-weight="700">−</text>
+    <text x="276" y="40" fill="#222222" font-family="Arial, sans-serif" font-size="20" font-weight="700">2</text>
+    <circle cx="308" cy="34" r="18" fill="#FFF2E4"/>
+    <text x="301" y="41" fill="#FF9B3D" font-family="Arial, sans-serif" font-size="20" font-weight="700">+</text>
+  </g>
+  <text x="24" y="690" fill="#111111" font-family="Arial, sans-serif" font-size="24" font-weight="700">Ingredienser</text>
+  <g transform="translate(24 714)">
+    <rect width="342" height="96" rx="20" fill="#FBF6F0"/>
+    <text x="18" y="34" fill="#222222" font-family="Arial, sans-serif" font-size="17" font-weight="700">Kød</text>
+    <text x="18" y="68" fill="#4F4F4F" font-family="Arial, sans-serif" font-size="16">Flæsk i skiver</text>
+    <text x="264" y="68" fill="#FF8A1C" font-family="Arial, sans-serif" font-size="16">12 skiver</text>
+  </g>
+</svg>

@@ -39,7 +39,6 @@ export default function ScrollReveal({
 
       if (process.env.NODE_ENV !== "production") {
         // Useful for verifying observer behavior in browser devtools.
-        // eslint-disable-next-line no-console
         console.debug("[ScrollReveal] revealed", el);
       }
     };

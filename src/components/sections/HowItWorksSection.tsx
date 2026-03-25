@@ -3,18 +3,18 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 const STEPS = [
   {
     number: "01",
-    headline: "Pick your preferences",
-    copy: "Tell Kostpilot what you like to eat, how many people you cook for, and any dietary needs. Takes about 60 seconds.",
+    headline: "Vælg dine præferencer",
+    copy: "Fortæl Kostpilot hvad du gerne vil spise, hvor mange du laver mad til, og om der er noget du vil undgå. Det tager under et minut.",
   },
   {
     number: "02",
-    headline: "Review your meal plan",
-    copy: "We generate a full week of meals built around that week's supermarket deals. Swap anything you don't like.",
+    headline: "Gennemgå din madplan",
+    copy: "Vi sammensætter en ugeplan baseret på ugens tilbud. Hvis noget ikke passer, kan du skifte retter ud med få tryk.",
   },
   {
     number: "03",
-    headline: "Shop with one list",
-    copy: "Your grocery list is ready — organised by aisle, with a running total. One efficient trip to the store.",
+    headline: "Handl med én liste",
+    copy: "Din indkøbsliste er klar med butiksoverblik, kategoriinddeling og løbende total, så én tur i butikken er nok.",
   },
 ];
 
@@ -26,10 +26,10 @@ export default function HowItWorksSection() {
         <ScrollReveal>
           <div className="mb-14 flex flex-col gap-4">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-[#e84c1e]">
-              How it works
+              Sådan virker det
             </p>
             <h2 className="max-w-lg text-[clamp(1.9rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.025em] text-[#111]">
-              Three steps to a smarter week
+              Tre trin til en roligere uge
             </h2>
           </div>
         </ScrollReveal>
