@@ -122,7 +122,8 @@ export function onRequestOptions() {
 }
 
 export async function onRequestPost({ request, env }: PagesFunctionContext) {
-  const config = getSupabaseConfig(env);
+  try {
+    const config = getSupabaseConfig(env);
 
   // Best-effort in-function throttle. Keep Cloudflare dashboard rate limiting enabled too.
   if (shouldApplyRateLimit(env)) {
@@ -161,10 +162,9 @@ export async function onRequestPost({ request, env }: PagesFunctionContext) {
     );
   }
 
-  const supabaseUrl = config.url;
-  const serviceRoleKey = config.serviceRoleKey;
+    const supabaseUrl = config.url;
+    const serviceRoleKey = config.serviceRoleKey;
 
-  try {
     let email = "";
     try {
       const payload = (await request.json()) as { email?: string };
