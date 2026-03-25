@@ -9,6 +9,9 @@ const WAITLIST_ENDPOINT = process.env.NEXT_PUBLIC_WAITLIST_ENDPOINT ?? "/api/wai
 
 export default function WaitlistSignupForm() {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [location, setLocation] = useState("");
   const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
   const [message, setMessage] = useState("");
 
@@ -37,6 +40,9 @@ export default function WaitlistSignupForm() {
         },
         body: JSON.stringify({
           email: normalizedEmail,
+          name: name.trim() || undefined,
+          age: age.trim() || undefined,
+          location: location.trim() || undefined,
         }),
       });
 
@@ -48,6 +54,9 @@ export default function WaitlistSignupForm() {
         setSubmissionState("success");
         setMessage(payload?.message ?? "Du er skrevet op. Vi sender din invite code ved lancering.");
         setEmail("");
+        setName("");
+        setAge("");
+        setLocation("");
         return;
       }
 
@@ -71,7 +80,7 @@ export default function WaitlistSignupForm() {
         E-mail
       </label>
 
-      <div className="flex flex-col gap-3 sm:flex-row">
+      <div className="flex flex-col gap-3">
         <input
           id="waitlist-email"
           type="email"
@@ -87,17 +96,43 @@ export default function WaitlistSignupForm() {
               setMessage("");
             }
           }}
-          className="min-h-14 flex-1 rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#e84c1e] focus:ring-4 focus:ring-[#e84c1e]/15"
+          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#e84c1e] focus:ring-4 focus:ring-[#e84c1e]/15"
           aria-invalid={showInlineError}
           aria-describedby="waitlist-email-help"
           disabled={submissionState === "submitting"}
+        />
+        <input
+          type="text"
+          placeholder="Navn"
+          autoComplete="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          disabled={submissionState === "submitting"}
+          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#e84c1e] focus:ring-4 focus:ring-[#e84c1e]/15"
+        />
+        <input
+          type="text"
+          placeholder="Alder"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+          disabled={submissionState === "submitting"}
+          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#e84c1e] focus:ring-4 focus:ring-[#e84c1e]/15"
+        />
+        <input
+          type="text"
+          placeholder="Location"
+          autoComplete="address-level2"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          disabled={submissionState === "submitting"}
+          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#e84c1e] focus:ring-4 focus:ring-[#e84c1e]/15"
         />
         <button
           type="submit"
           disabled={submissionState === "submitting"}
           className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#e84c1e] px-6 text-[15px] font-semibold text-white transition-colors hover:bg-[#c73d14] disabled:cursor-not-allowed disabled:bg-[#a8482a]"
         >
-          {submissionState === "submitting" ? "Sender..." : "Skriv mig op"}
+          {submissionState === "submitting" ? "Sender..." : "Tilmeld"}
         </button>
       </div>
 

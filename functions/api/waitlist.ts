@@ -166,9 +166,20 @@ export async function onRequestPost({ request, env }: PagesFunctionContext) {
     const serviceRoleKey = config.serviceRoleKey;
 
     let email = "";
+    let name: string | undefined;
+    let age: string | undefined;
+    let location: string | undefined;
     try {
-      const payload = (await request.json()) as { email?: string };
+      const payload = (await request.json()) as {
+        email?: string;
+        name?: string;
+        age?: string;
+        location?: string;
+      };
       email = normalizeEmail(payload.email ?? "");
+      name = payload.name?.trim() || undefined;
+      age = payload.age?.trim() || undefined;
+      location = payload.location?.trim() || undefined;
     } catch {
       return jsonResponse({ message: "Ugyldig forespørgsel." }, 400);
     }
@@ -213,14 +224,22 @@ export async function onRequestPost({ request, env }: PagesFunctionContext) {
       );
     }
 
-    const insertPayload: Record<string, string> = {
+    const insertPayload: Record<string, unknown> = {
       [config.emailColumn]: email,
     };
 
     const sourceColumn = config.sourceColumn;
     if (sourceColumn) {
-      insertPayload[sourceColumn as string] = config.sourceValue;
+      insertPayload[sourceColumn] = config.sourceValue;
     }
+
+    insertPayload["metadata"] = {
+      ...(name ? { name } : {}),
+      ...(age ? { age } : {}),
+      ...(location ? { location } : {}),
+      source_page: config.sourceValue ?? "website",
+      submitted_at: new Date().toISOString(),
+    };
 
     const insertResponse = await fetch(`${supabaseUrl}/rest/v1/${config.table}`, {
       method: "POST",
