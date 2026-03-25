@@ -78,7 +78,7 @@ function getRateLimitConfig(env: WaitlistEnv) {
   };
 }
 
-function jsonResponse(body: Record<string, string>, status: number) {
+function jsonResponse(body: Record<string, unknown>, status: number) {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
@@ -191,7 +191,17 @@ let email = "";
   );
 
   if (!duplicateResponse.ok) {
-    return jsonResponse({ message: "Ventelisten kunne ikke tjekkes lige nu." }, 502);
+    const duplicateRawBody = await duplicateResponse.text();
+
+    return jsonResponse(
+      {
+        message: "Ventelisten kunne ikke tjekkes lige nu.",
+        status: duplicateResponse.status,
+        statusText: duplicateResponse.statusText,
+        supabaseError: duplicateRawBody,
+      },
+      502,
+    );
   }
 
   const existingRows = (await duplicateResponse.json()) as Array<Record<string, string>>;
@@ -228,19 +238,36 @@ let email = "";
     );
   }
 
-  const errorPayload = (await insertResponse.json().catch(() => null)) as
-    | { code?: string; message?: string }
-    | null;
+  const insertRawBody = await insertResponse.text();
+  let errorPayload: { code?: string; message?: string } | null = null;
+
+  if (insertRawBody) {
+    try {
+      errorPayload = JSON.parse(insertRawBody) as { code?: string; message?: string };
+    } catch {
+      errorPayload = null;
+    }
+  }
 
   if (errorPayload?.code === "23505") {
     return jsonResponse(
-      { message: "Den e-mail er allerede skrevet op til ventelisten." },
+      {
+        message: "Den e-mail er allerede skrevet op til ventelisten.",
+        status: insertResponse.status,
+        statusText: insertResponse.statusText,
+        supabaseError: insertRawBody,
+      },
       409,
     );
   }
 
   return jsonResponse(
-    { message: errorPayload?.message ?? "Kunne ikke skrive dig op lige nu." },
+    {
+      message: errorPayload?.message ?? insertRawBody || "Kunne ikke skrive dig op lige nu.",
+      status: insertResponse.status,
+      statusText: insertResponse.statusText,
+      supabaseError: insertRawBody,
+    },
     502,
   );
 }
