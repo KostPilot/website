@@ -136,13 +136,36 @@ export async function onRequestPost({ request, env }: PagesFunctionContext) {
       );
     }
   }
+  console.log("WAITLIST CONFIG CHECK", {
+    hasUrl: !!config.url,
+    hasServiceRoleKey: !!config.serviceRoleKey,
+    urlPrefix: config.url ? config.url.slice(0, 30) : null,
+  });
+console.log("WAITLIST CONFIG CHECK", {
+  hasUrl: !!config.url,
+  hasServiceRoleKey: !!config.serviceRoleKey,
+  urlPrefix: config.url ? config.url.slice(0, 30) : null,
+});
 
-  if (!config.url || !config.serviceRoleKey) {
-    return jsonResponse({ message: "Ventelisten er ikke konfigureret endnu." }, 500);
-  }
+if (!config.url || !config.serviceRoleKey) {
+  return new Response(
+    JSON.stringify({
+      message: "Ventelisten er ikke konfigureret endnu.",
+      hasUrl: !!config.url,
+      hasServiceRoleKey: !!config.serviceRoleKey,
+      urlPrefix: config.url ? config.url.slice(0, 30) : null,
+    }),
+    {
+      status: 500,
+      headers: {
+        "Content-Type": "application/json",
+        ...corsHeaders,
+      },
+    },
+  );
+}
 
-  let email = "";
-
+let email = "";
   try {
     const payload = (await request.json()) as { email?: string };
     email = normalizeEmail(payload.email ?? "");
