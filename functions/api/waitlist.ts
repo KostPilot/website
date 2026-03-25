@@ -263,7 +263,7 @@ let email = "";
 
   return jsonResponse(
     {
-      message: errorPayload?.message ?? insertRawBody || "Kunne ikke skrive dig op lige nu.",
+      message: (errorPayload?.message ?? insertRawBody) || "Kunne ikke skrive dig op lige nu.",
       status: insertResponse.status,
       statusText: insertResponse.statusText,
       supabaseError: insertRawBody,
