@@ -76,7 +76,7 @@ export default function WaitlistSignupForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex w-full max-w-md flex-col gap-4">
-      <label htmlFor="waitlist-email" className="text-sm font-medium text-white">
+      <label htmlFor="waitlist-email" className="sr-only">
         E-mail
       </label>
 
@@ -96,7 +96,7 @@ export default function WaitlistSignupForm() {
               setMessage("");
             }
           }}
-          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#e84c1e] focus:ring-4 focus:ring-[#e84c1e]/15"
+          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#D4704C] focus:ring-4 focus:ring-[#D4704C]/15"
           aria-invalid={showInlineError}
           aria-describedby="waitlist-email-help"
           disabled={submissionState === "submitting"}
@@ -108,7 +108,7 @@ export default function WaitlistSignupForm() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           disabled={submissionState === "submitting"}
-          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#e84c1e] focus:ring-4 focus:ring-[#e84c1e]/15"
+          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#D4704C] focus:ring-4 focus:ring-[#D4704C]/15"
         />
         <input
           type="text"
@@ -116,28 +116,28 @@ export default function WaitlistSignupForm() {
           value={age}
           onChange={(e) => setAge(e.target.value)}
           disabled={submissionState === "submitting"}
-          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#e84c1e] focus:ring-4 focus:ring-[#e84c1e]/15"
+          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#D4704C] focus:ring-4 focus:ring-[#D4704C]/15"
         />
         <input
           type="text"
-          placeholder="Location"
+          placeholder="By"
           autoComplete="address-level2"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           disabled={submissionState === "submitting"}
-          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#e84c1e] focus:ring-4 focus:ring-[#e84c1e]/15"
+          className="min-h-14 w-full rounded-full border border-white/12 bg-white px-5 text-[15px] text-[#111] outline-none transition focus:border-[#D4704C] focus:ring-4 focus:ring-[#D4704C]/15"
         />
         <button
           type="submit"
           disabled={submissionState === "submitting"}
-          className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#e84c1e] px-6 text-[15px] font-semibold text-white transition-colors hover:bg-[#c73d14] disabled:cursor-not-allowed disabled:bg-[#a8482a]"
+          className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#D4704C] px-6 text-[15px] font-semibold text-white transition-colors hover:bg-[#BD5E3C] disabled:cursor-not-allowed disabled:bg-[#8f4a31]"
         >
           {submissionState === "submitting" ? "Sender..." : "Tilmeld"}
         </button>
       </div>
 
       <p id="waitlist-email-help" className="text-sm leading-relaxed text-[#8f8f8f]">
-        Vi bruger din e-mail til at sende invite code og besked, når Kostpilot lancerer.
+        Vi bruger din e-mail til at sende invite code og besked, når KostPilot lancerer.
       </p>
 
       {showInlineError ? (
