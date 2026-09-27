@@ -30,6 +30,14 @@ const FEATURES: Feature[] = [
     alt: "En opskrift med tilbudsvarer",
   },
   {
+    eyebrow: "Madskabere",
+    title: "Følg dem, der laver maden, du kan lide.",
+    body: "Snart kan du følge danske madskabere i appen og lægge deres retter direkte ind i madplanen, med priser fra ugens tilbud.",
+    points: ["Hele profilen samlet ét sted", "Læg en ret i madplanen med ét tryk"],
+    img: "/screens/skaber.webp",
+    alt: "En madskabers profil i appen",
+  },
+  {
     eyebrow: "Næringsindhold",
     title: "Alt, hvad der er i maden.",
     body: "Tryk på en ingrediens og se vitaminer, mineraler, fedtsyrer og aminosyrer, og hvad netop din mængde indeholder.",

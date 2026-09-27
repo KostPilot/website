@@ -65,7 +65,12 @@ export function Footer() {
           <LogoMark size={22} cord="#0f0d0c" />
           <span className="font-display text-[16px]">KostPilot</span>
         </div>
-        <p>© {new Date().getFullYear()} KostPilot · Lavet i Danmark</p>
+        <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-6">
+          <a href="mailto:oliver@kost-pilot.dk" className="transition hover:text-white">
+            oliver@kost-pilot.dk
+          </a>
+          <p>© {new Date().getFullYear()} KostPilot · Lavet i Danmark</p>
+        </div>
       </div>
     </footer>
   );
