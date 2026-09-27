@@ -214,9 +214,15 @@ a {
   }
 }
 
+/* Kvittering på ventelisten: glider roligt op, logoet tegner sig selv indeni. */
+.waitlist-joined {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .rise {
+  .rise,
+  .waitlist-joined {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;

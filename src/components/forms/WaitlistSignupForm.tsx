@@ -1,7 +1,8 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { isValidWaitlistEmail, normalizeEmail } from "@/lib/waitlist";
+import LogoMark from "@/components/site/LogoMark";
 
 type SubmissionState = "idle" | "submitting" | "success" | "duplicate" | "error";
 
@@ -14,6 +15,7 @@ export default function WaitlistSignupForm() {
   const [location, setLocation] = useState("");
   const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
   const [message, setMessage] = useState("");
+  const [joinedEmail, setJoinedEmail] = useState("");
 
   const normalizedEmail = useMemo(() => normalizeEmail(email), [email]);
 
@@ -51,6 +53,7 @@ export default function WaitlistSignupForm() {
         | null;
 
       if (response.ok) {
+        setJoinedEmail(normalizedEmail);
         setSubmissionState("success");
         setMessage(payload?.message ?? "Du er skrevet op. Vi sender din invite code ved lancering.");
         setEmail("");
@@ -61,6 +64,7 @@ export default function WaitlistSignupForm() {
       }
 
       if (response.status === 409) {
+        setJoinedEmail(normalizedEmail);
         setSubmissionState("duplicate");
         setMessage(payload?.message ?? "Den e-mail er allerede skrevet op til ventelisten.");
         return;
@@ -72,6 +76,20 @@ export default function WaitlistSignupForm() {
       setSubmissionState("error");
       setMessage("Kunne ikke kontakte ventelisten. Prøv igen om lidt.");
     }
+  }
+
+  if (submissionState === "success" || submissionState === "duplicate") {
+    return (
+      <WaitlistJoined
+        email={joinedEmail}
+        already={submissionState === "duplicate"}
+        onAnother={() => {
+          setSubmissionState("idle");
+          setMessage("");
+          setEmail("");
+        }}
+      />
+    );
   }
 
   return (
@@ -145,19 +163,65 @@ export default function WaitlistSignupForm() {
       ) : null}
 
       {message ? (
-        <p
-          className={`text-sm ${
-            submissionState === "success"
-              ? "text-[#b9e8c2]"
-              : submissionState === "duplicate"
-                ? "text-[#ffd08a]"
-                : "text-[#ffb39b]"
-          }`}
-          role={submissionState === "error" ? "alert" : "status"}
-        >
+        <p className="text-sm text-[#ffb39b]" role="alert">
           {message}
         </p>
       ) : null}
     </form>
+  );
+}
+
+/** Kvittering når man er kommet på listen: logoet tegner sig selv, og man kan dele siden videre. */
+function WaitlistJoined({ email, already, onAnother }: { email: string; already: boolean; onAnother: () => void }) {
+  const heading = useRef<HTMLHeadingElement>(null);
+  const [shared, setShared] = useState<"" | "copied" | "failed">("");
+
+  // Flyt fokus til kvitteringen, så skærmlæsere og tastatur følger med.
+  useEffect(() => {
+    heading.current?.focus();
+  }, []);
+
+  async function share() {
+    const url = "https://kost-pilot.dk";
+    const data = { title: "KostPilot", text: "Madplanen, der betaler sig selv. Skriv dig på ventelisten:", url };
+    try {
+      if (navigator.share) {
+        await navigator.share(data);
+        return;
+      }
+      await navigator.clipboard.writeText(url);
+      setShared("copied");
+    } catch (err) {
+      if ((err as Error)?.name !== "AbortError") setShared("failed");
+    }
+  }
+
+  return (
+    <div className="waitlist-joined flex w-full max-w-md flex-col items-center rounded-[32px] bg-white/[0.05] px-6 py-10 text-center ring-1 ring-white/10" role="status">
+      <LogoMark size={64} animate cord="#1a1716" />
+      <h3 ref={heading} tabIndex={-1} className="font-display mt-6 text-[34px] leading-[1.08] text-white outline-none">
+        {already ? "Du står allerede på listen." : "Du er på listen."}
+      </h3>
+      <p className="mt-3 max-w-sm text-[16px] leading-relaxed text-white/70">
+        {already ? "Vi har din e-mail" : "Tak. Vi skriver til"}{" "}
+        {email ? <span className="font-semibold text-white">{email}</span> : "dig"}
+        {already ? ", og du får besked, når KostPilot åbner på iPhone." : ", når KostPilot åbner på iPhone. Du er blandt de første, der får en invitation."}
+      </p>
+      <div className="mt-8 flex w-full flex-col items-center gap-3">
+        <button
+          type="button"
+          onClick={share}
+          className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#D4704C] px-6 text-[15px] font-semibold text-white transition-colors hover:bg-[#BD5E3C] sm:w-auto"
+        >
+          Del KostPilot med en ven
+        </button>
+        <p className="min-h-5 text-[13px] text-white/55" aria-live="polite">
+          {shared === "copied" ? "Linket er kopieret." : shared === "failed" ? "Kunne ikke dele. Linket er kost-pilot.dk" : ""}
+        </p>
+        <button type="button" onClick={onAnother} className="text-[13px] text-white/55 underline-offset-4 transition hover:text-white hover:underline">
+          Skriv en anden e-mail op
+        </button>
+      </div>
+    </div>
   );
 }
