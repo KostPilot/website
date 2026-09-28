@@ -1,38 +1,9 @@
+import Link from "next/link";
 import Reveal from "./Reveal";
 import LogoMark from "./LogoMark";
 import WaitlistSignupForm from "@/components/forms/WaitlistSignupForm";
-
-/** Lys "papir"-del: sådan virker det i tre trin -- som appens egne lyse skærme. */
-export function HowItWorks() {
-  const steps = [
-    { n: "1", t: "Fortæl hvad du kan lide", b: "Budget, hvor mange I er, og hvad I ikke spiser. Det tager et minut." },
-    { n: "2", t: "Få ugens plan", b: "Ud fra tilbuddene i dine butikker og det, du har i køkkenet." },
-    { n: "3", t: "Handl og lav mad", b: "Listen i butikkens rækkefølge, og madlavning trin for trin." },
-  ];
-  return (
-    <section id="saadan" className="bg-[#f8f5f0] py-28 text-[#1c1c1c]">
-      <div className="mx-auto max-w-6xl px-5">
-        <Reveal className="text-center">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#D4704C]">Sådan virker det</p>
-          <h2 className="font-display mt-4 text-[38px] leading-[1.05] sm:text-[56px]">Tre trin. Så kører det.</h2>
-        </Reveal>
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {steps.map((s, i) => (
-            <Reveal key={s.n} delay={i * 110} className="rounded-[28px] bg-white p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_40px_-20px_rgba(0,0,0,0.18)]">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F7E6DE] text-[17px] font-bold text-[#D4704C]">{s.n}</div>
-              <h3 className="mt-6 text-[21px] font-semibold">{s.t}</h3>
-              <p className="mt-2 text-[15.5px] leading-relaxed text-[#4a4a4a]">{s.b}</p>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal className="mx-auto mt-16 max-w-3xl text-center text-[14px] leading-relaxed text-[#9a9a9a]">
-          Næringsdata: Den Danske Fødevaredatabase (fcdb.fooddata.dk), Fødevareinstituttet, Danmarks Tekniske Universitet, CC BY 4.0, suppleret med
-          U.S. Department of Agriculture, FoodData Central. Opskriftsfotos fra Pexels.
-        </Reveal>
-      </div>
-    </section>
-  );
-}
+import { PAGES } from "./pages";
+import { LINKEDIN } from "./links";
 
 /** Ventelisten: mørk igen, med logoet og gløden -- afslutningen på keynoten. */
 export function Waitlist() {
@@ -52,7 +23,59 @@ export function Waitlist() {
         <Reveal delay={200} className="mt-10 flex w-full justify-center">
           <WaitlistSignupForm />
         </Reveal>
+        <Reveal delay={260}>
+          <Link href="/lancering" className="mt-8 inline-flex items-center gap-2 text-[15px] text-white/60 transition hover:text-white">
+            <span className="live-dot h-2 w-2 rounded-full bg-[#6fae7a]" />
+            Se hvor langt vi er mod App Store
+            <span aria-hidden>→</span>
+          </Link>
+        </Reveal>
       </div>
+    </section>
+  );
+}
+
+export function LinkedInIcon({ size = 14 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+    </svg>
+  );
+}
+
+/** Mød holdet: et kig bag kulisserne, der leder videre til historien (tillid og ansigter bag produktet). */
+export function MeetTheTeam() {
+  return (
+    <section className="bg-[#f8f5f0] px-5 pb-28 text-[#1c1c1c]">
+      <Reveal className="mx-auto grid max-w-6xl items-center gap-10 overflow-hidden rounded-[36px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_24px_60px_-30px_rgba(0,0,0,0.25)] md:grid-cols-2 md:gap-0">
+        <div className="relative h-[320px] md:h-full md:min-h-[460px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/historien/grundlaeggerne.jpg" alt="Kasper og Oliver fortæller om KostPilot" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[50%_30%]" />
+        </div>
+        <div className="px-8 pb-10 md:px-14 md:py-14">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#bd5e3c]">Holdet bag</p>
+          <h2 className="font-display mt-4 text-[34px] leading-[1.08] sm:text-[46px]">
+            To venner. Én <em className="font-normal italic text-[#bd5e3c]">skør</em> idé.
+          </h2>
+          <p className="mt-5 max-w-md text-[17px] leading-relaxed text-[#4a4a4a]">
+            Oliver og Kasper er 24 år og startede KostPilot, fordi SU&apos;en skulle række længere. Læs om regnestykket, der satte det hele i gang.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link href="/historien" className="rounded-full bg-[#1c1c1c] px-6 py-3 text-[15px] font-semibold text-white transition hover:bg-black">
+              Læs historien
+            </Link>
+            <a
+              href={LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-full px-5 py-3 text-[15px] font-medium text-[#1c1c1c] ring-1 ring-black/15 transition hover:ring-black/30"
+            >
+              <LinkedInIcon size={15} />
+              Følg os på LinkedIn
+            </a>
+          </div>
+        </div>
+      </Reveal>
     </section>
   );
 }
@@ -66,6 +89,15 @@ export function Footer() {
           <span className="font-display text-[16px]">KostPilot</span>
         </div>
         <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-6">
+          {PAGES.map((p) => (
+            <Link key={p.href} href={p.href} className="transition hover:text-white">
+              {p.label}
+            </Link>
+          ))}
+          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 transition hover:text-white">
+            <LinkedInIcon />
+            LinkedIn
+          </a>
           <a href="mailto:oliver@kost-pilot.dk" className="transition hover:text-white">
             oliver@kost-pilot.dk
           </a>
