@@ -605,6 +605,97 @@ body {
   }
 }
 
+/* ---- Køkkenholdet og gaven: glød, ringe og live-beskeder bag telefonen ---- */
+.social-glow {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  width: 720px;
+  height: 720px;
+  margin-left: -360px;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: breathe 6s ease-in-out infinite;
+}
+.social-sync .social-glow {
+  background: radial-gradient(closest-side, rgba(143, 207, 153, 0.42), rgba(212, 112, 76, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+}
+.social-gift .social-glow {
+  background: radial-gradient(closest-side, rgba(240, 162, 131, 0.7), rgba(212, 112, 76, 0.35) 45%, rgba(0, 0, 0, 0) 100%);
+}
+.social-ring {
+  position: absolute;
+  left: 50%;
+  bottom: 35%;
+  width: 300px;
+  height: 300px;
+  margin: 0 0 -150px -150px;
+  border-radius: 50%;
+  border: 2px solid rgba(240, 162, 131, 0.8);
+  box-shadow: 0 0 40px rgba(212, 112, 76, 0.35);
+  opacity: 0;
+  animation: ring 4.8s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+}
+.social-sync .social-ring {
+  border-color: rgba(143, 207, 153, 0.7);
+  box-shadow: 0 0 40px rgba(111, 174, 122, 0.3);
+}
+.social-chip {
+  bottom: 12%;
+  opacity: 0;
+  animation: chip-float 7.6s cubic-bezier(0.2, 0.7, 0.2, 1) infinite;
+}
+@keyframes chip-float {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.92);
+  }
+  10%,
+  55% {
+    opacity: 1;
+    transform: translateY(-120px) scale(1);
+  }
+  75%,
+  100% {
+    opacity: 0;
+    transform: translateY(-220px) scale(0.96);
+  }
+}
+
+/* ---- Boardingkortet: flyet glider langs ruten, og stemplet slår ned ved check-in ---- */
+.pass-plane {
+  animation: pass-fly 4.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@keyframes pass-fly {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% - 16px);
+    opacity: 0;
+  }
+}
+.pass-stamp {
+  animation: stamp 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.2) 0.35s both;
+}
+@keyframes stamp {
+  from {
+    opacity: 0;
+    transform: rotate(-14deg) scale(2.2);
+  }
+  to {
+    opacity: 0.92;
+    transform: rotate(-14deg) scale(1);
+  }
+}
+
 /* ---- Ro i bevægelserne: glid op og ton ind, ingen bounce ---- */
 .reveal {
   opacity: 0;
@@ -762,9 +853,22 @@ body {
     opacity: 1;
     transform: none;
   }
+  .social-chip {
+    display: none;
+  }
+  .pass-plane {
+    animation: none;
+    left: calc(50% - 8px);
+  }
+  .pass-stamp {
+    animation: none;
+    transform: rotate(-14deg);
+  }
   .timer-ring,
   .cord-dot,
-  .swap-in {
+  .swap-in,
+  .social-glow,
+  .social-ring {
     animation: none !important;
   }
   .reel img:first-child {

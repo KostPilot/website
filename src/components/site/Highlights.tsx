@@ -163,7 +163,7 @@ export default function Highlights({ items }: { items: Highlight[] }) {
                 </div>
                 <div className="relative flex flex-1 items-end justify-center">
                   <div className="hl-phone relative w-[220px] sm:w-[270px]">
-                    <div className="relative aspect-[1206/2622] rounded-[16%/7.4%] bg-[#0b0b0c] p-[3.2%] shadow-[0_40px_120px_-20px_rgba(0,0,0,0.9)] ring-1 ring-white/15">
+                    <div className="relative aspect-[1000/2100] rounded-[16%/7.4%] bg-[#0b0b0c] p-[3.2%] shadow-[0_40px_120px_-20px_rgba(0,0,0,0.9)] ring-1 ring-white/15">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={h.img} alt={h.alt} loading={i < 2 ? "eager" : "lazy"} className="h-full w-full rounded-[13%/6%] object-cover object-top" />
                     </div>

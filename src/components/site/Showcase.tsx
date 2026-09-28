@@ -178,7 +178,7 @@ function Recap() {
         </Reveal>
         <Reveal delay={120} className="relative w-[270px] shrink-0 sm:w-[300px]">
           <div className="glow -inset-28" />
-          <div className="relative aspect-[1206/2622] rounded-[16%/7.4%] bg-[#0b0b0c] p-[3.2%] shadow-[0_40px_120px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
+          <div className="relative aspect-[1000/2100] rounded-[16%/7.4%] bg-[#0b0b0c] p-[3.2%] shadow-[0_40px_120px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <div className="reel relative h-full w-full overflow-hidden rounded-[13%/6%]">
               {frames.map((f, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -199,19 +199,75 @@ function Recap() {
   );
 }
 
-/** Køkkenholdet og gaven: fællesskab. */
+type Social = { eyebrow: string; title: string; body: string; img: string; alt: string; fx: "sync" | "gift"; chips: string[] };
+
+const SOCIAL: Social[] = [
+  {
+    eyebrow: "Køkkenholdet",
+    title: "Del madplan og indkøb med dem, du bor med.",
+    body: "Én fælles indkøbsliste, der opdateres live, et fælles budget og et fælles køleskab. Ingen dobbeltkøb.",
+    img: "/screens/kokkenholdet.webp",
+    alt: "Køkkenholdet: husstanden deler indkøbsliste, budget og madplan",
+    fx: "sync",
+    chips: ["Mælk tilføjet", "Ris krydset af", "Budget opdateret", "Tacos på fredag"],
+  },
+  {
+    eyebrow: "Giv en ven en pilot",
+    title: "Kender du én, der altid er flad før SU'en?",
+    body: "Del KostPilot med en QR-kode formet som vores logo, eller send den med AirDrop. Snart: sparedyst, hvor I ser, hvem der sparer flest procent.",
+    img: "/screens/gave.webp",
+    alt: "Giv en ven en pilot med en QR-kode",
+    fx: "gift",
+    chips: ["Gave sendt", "QR-kode scannet", "Sendt med AirDrop", "Ny pilot om bord"],
+  },
+];
+
+/**
+ * Køkkenholdet og gaven: to store kort som Apples, hvor telefonerne står i præcis samme højde,
+ * forankret i bunden af kortet. Bag dem svæver små live-beskeder op, så fællesskabet føles levende.
+ */
 function Together() {
   return (
-    <div className="mx-auto mt-40 grid max-w-6xl gap-16 px-5 md:grid-cols-2">
-      {[
-        { eyebrow: "Køkkenholdet", title: "Del madplan og indkøb med dem, du bor med.", body: "Én fælles indkøbsliste, der opdateres live, et fælles budget og et fælles køleskab. Ingen dobbeltkøb.", img: "/screens/kokkenholdet.webp", alt: "Køkkenholdet" },
-        { eyebrow: "Giv en ven en pilot", title: "Kender du én, der altid er flad før SU'en?", body: "Del KostPilot med en QR-kode formet som vores logo, eller send den med AirDrop. Snart: sparedyst, hvor I ser hvem der sparer flest procent.", img: "/screens/gave.webp", alt: "Giv en ven en pilot" },
-      ].map((c, i) => (
-        <Reveal key={c.title} delay={i * 120} className="flex flex-col items-center rounded-[36px] bg-white/[0.04] p-8 text-center ring-1 ring-white/10 sm:p-10">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#a1a1a6]">{c.eyebrow}</p>
-          <h3 className="font-display mt-4 text-[30px] leading-[1.1] sm:text-[36px]">{c.title}</h3>
-          <p className="mt-4 max-w-md text-[16px] leading-relaxed text-white/65">{c.body}</p>
-          <Phone src={c.img} alt={c.alt} className="mt-10 w-[230px]" />
+    <div className="mx-auto mt-40 grid max-w-6xl gap-5 px-5 md:grid-cols-2">
+      {SOCIAL.map((c, i) => (
+        <Reveal
+          key={c.title}
+          delay={i * 120}
+          className="social-card group relative h-[820px] overflow-hidden rounded-[36px] bg-[#0a0908] ring-1 ring-white/[0.07] sm:h-[780px]"
+        >
+          {/* Effekten bag telefonen */}
+          <div className={`fx social-fx ${c.fx === "sync" ? "social-sync" : "social-gift"}`}>
+            <span className="social-glow" />
+            {[0, 1, 2].map((r) => (
+              <span key={r} className="social-ring" style={{ animationDelay: `${r * 1.6}s` }} />
+            ))}
+          </div>
+
+          {/* Teksten har fast plads øverst, så telefonerne altid står ens */}
+          <div className="relative z-10 flex h-[380px] flex-col items-center px-7 pt-12 text-center sm:h-[280px] sm:px-12">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#f0a283]">{c.eyebrow}</p>
+            <h3 className="font-display mt-4 text-[30px] leading-[1.1] sm:text-[38px]">{c.title}</h3>
+            <p className="mt-4 max-w-md text-[16px] leading-relaxed text-white/65">{c.body}</p>
+          </div>
+
+          {/* Live-beskeder, der svæver op på hver side af telefonen */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 top-[280px] z-30 hidden sm:block" aria-hidden>
+            {c.chips.map((t, n) => (
+              <span
+                key={t}
+                className="social-chip absolute whitespace-nowrap rounded-2xl bg-[#1d1a18]/80 px-4 py-2.5 text-[13.5px] font-medium text-white shadow-[0_18px_40px_-12px_rgba(0,0,0,0.8)] ring-1 ring-white/15 backdrop-blur-xl"
+                style={{ [n % 2 ? "right" : "left"]: "5%", animationDelay: `${n * 1.9}s` } as React.CSSProperties}
+              >
+                <span className={`mr-2 inline-block h-1.5 w-1.5 rounded-full align-middle ${c.fx === "sync" ? "bg-[#8fcf99]" : "bg-[#f0a283]"}`} />
+                {t}
+              </span>
+            ))}
+          </div>
+
+          {/* Telefonen: stor, forankret i bunden og beskåret af kortet */}
+          <div className="absolute bottom-0 left-1/2 z-20 w-[270px] -translate-x-1/2 translate-y-[20%] transition-transform duration-700 ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover:translate-y-[16%] sm:w-[300px]">
+            <Phone src={c.img} alt={c.alt} />
+          </div>
         </Reveal>
       ))}
     </div>
