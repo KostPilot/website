@@ -109,7 +109,7 @@ export function Footer() {
       </div>
       {/* Virksomhedsoplysninger (e-handelslovens § 7): navn, CVR, adresse og e-mail */}
       <p className="mx-auto mt-6 max-w-6xl px-5 text-center text-[12px] text-white/40 sm:text-left">
-        KostPilot ApS · CVR 46414241 · Lønneparken 7, 6. 4., 9000 Aalborg · oliver@kost-pilot.dk
+        KostPilot ApS · CVR 46414241 · Helgolandsgade 62, 9000 Aalborg · oliver@kost-pilot.dk
       </p>
     </footer>
   );

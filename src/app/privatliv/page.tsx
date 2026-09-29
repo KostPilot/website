@@ -72,7 +72,7 @@ export default function Privacy() {
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {[
               ["Gemt i EU", "På servere i Irland."],
-              ["Ingen reklamer", "Vi sælger aldrig dine oplysninger."],
+              ["Dine oplysninger er ikke til salg", "Vi sælger aldrig dine personoplysninger."],
               ["Du bestemmer", "Samtykker er slået fra, indtil du slår dem til."],
             ].map(([t, b]) => (
               <div key={t} className="rounded-[20px] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_40px_-24px_rgba(0,0,0,0.2)]">
@@ -100,7 +100,7 @@ export default function Privacy() {
           <div className="mt-6">
             <Section id="hvem" title="1. Hvem er vi">
               <p>
-                Dataansvarlig er <strong>KostPilot ApS</strong>, CVR 46414241, Lønneparken 7, 6. 4., 9000 Aalborg. Skriv til os på{" "}
+                Dataansvarlig er <strong>KostPilot ApS</strong>, CVR 46414241, Helgolandsgade 62, 9000 Aalborg. Skriv til os på{" "}
                 <A href="mailto:oliver@kost-pilot.dk">oliver@kost-pilot.dk</A>. Vi har ikke en databeskyttelsesrådgiver, fordi vi ikke er forpligtet til det,
                 men henvendelser om persondata besvares af stifterne.
               </p>
@@ -158,7 +158,7 @@ export default function Privacy() {
                   <strong>Fejlrapporter og sikker drift:</strong> vores legitime interesse i at rette fejl og holde tjenesten sikker (art. 6, stk. 1, litra f).
                 </li>
               </ul>
-              <p>Vi viser ingen reklamer, og vi sælger aldrig dine oplysninger. Vi træffer ingen afgørelser om dig, der alene er automatiske og har retsvirkning.</p>
+              <p>Vi sælger aldrig dine personoplysninger. Vi bruger ikke dine data til målrettede reklamer uden dit samtykke. Har du sagt ja til anonym statistik, kan dine data indgå i samlet, anonym statistik (fx om madvaner og priser), hvor ingen enkeltperson kan genkendes, og den statistik kan vi dele med andre. Vi træffer ingen afgørelser om dig, der alene er automatiske og har retsvirkning.</p>
             </Section>
 
             <Section id="samtykke" title="4. Dine samtykker og aldersgrænse">
