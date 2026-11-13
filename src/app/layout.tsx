@@ -7,14 +7,14 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const serif = Source_Serif_4({ variable: "--font-serif", subsets: ["latin"], weight: ["400", "600"], style: ["normal", "italic"] });
 
 const DESCRIPTION =
-  "KostPilot finder ugens bedste tilbud i Netto, REMA 1000, Føtex og Bilka, laver en madplan du har lyst til, og holder styr på indkøb, budget og køkken. Kommer snart til iPhone.";
+  "KostPilot finder ugens bedste tilbud i dagligvarekæderne, laver en madplan du har lyst til, og holder styr på indkøb, budget og køkken. Kommer snart til iPhone.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kost-pilot.dk"),
   title: { default: "KostPilot · Madplanen, der betaler sig selv", template: "%s · KostPilot" },
   description: DESCRIPTION,
   applicationName: "KostPilot",
-  keywords: ["madplan", "tilbud", "tilbudsavis", "indkøbsliste", "madbudget", "SU", "studerende", "opskrifter", "Netto", "REMA 1000", "Føtex", "Bilka", "app"],
+  keywords: ["madplan", "tilbud", "tilbudsavis", "indkøbsliste", "madbudget", "SU", "studerende", "opskrifter", "dagligvarer", "supermarked", "app"],
   authors: [{ name: "KostPilot ApS" }],
   alternates: { canonical: "/" },
   openGraph: {

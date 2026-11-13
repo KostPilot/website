@@ -198,7 +198,7 @@ export default function Privacy() {
                 Cloudflare er amerikanske virksomheder; skulle de få adgang til data fra USA, sker det efter EU-Kommissionens standardkontrakter og EU-US Data
                 Privacy Framework. Apple leverer App Store og TestFlight som selvstændig dataansvarlig efter Apples egne vilkår.
               </p>
-              <p>Tilbud og priser henter vi fra Salling Group og REMA 1000. Vi sender ingen oplysninger om dig til dem.</p>
+              <p>Tilbud og priser henter vi fra dagligvarekæderne. Vi sender ingen oplysninger om dig til dem.</p>
             </Section>
 
             <Section id="hvorlaenge" title="7. Hvor længe vi gemmer dem">

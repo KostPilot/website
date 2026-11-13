@@ -10,7 +10,7 @@ const FEATURES: Highlight[] = [
   {
     eyebrow: "Ugens tilbud",
     title: "Tilbuddene. Allerede sorteret for dig.",
-    body: "KostPilot følger tilbuddene i Netto, REMA 1000, Føtex og Bilka og viser dem, der passer til din madplan. Sæt prisvagt på det, du køber tit, så siger den til, når det er billigt igen.",
+    body: "KostPilot følger tilbuddene i dagligvarekæderne og viser dem, der passer til din madplan. Sæt prisvagt på det, du køber tit, så siger den til, når det er billigt igen.",
     img: "/screens/tilbud.webp",
     alt: "Ugens tilbud i appen",
     fx: "aurora",
@@ -94,8 +94,8 @@ export default function Showcase() {
 /** Tal fra appen i dag. Kun rigtige tal (docs/STATUS_OG_PLAN.md i appen); ret dem, når de ændrer sig. */
 function Numbers() {
   const stats = [
-    { n: 354, label: "opskrifter med pris og fremgangsmåde" },
-    { n: 4, label: "kæder i tilbudsavisen: Netto, REMA 1000, Føtex og Bilka" },
+    { n: 304, label: "opskrifter med pris og fremgangsmåde" },
+    { n: 14, label: "allergener, som hver madplan bliver tjekket mod" },
     { n: 498, label: "ingredienser med næringsdata fra DTU" },
   ];
   return (
@@ -118,7 +118,7 @@ function Pilot() {
     { who: "user", text: "har 150 kr til resten af ugen og gider ikke lave mad hver aften. hvad gør jeg?" },
     {
       who: "pilot",
-      text: "Lav en stor gryde kyllingekarry søndag, så har du aftensmad til tre dage. Kyllingen er på tilbud i Netto, og hele ugen lander på ca. 140 kr.",
+      text: "Lav en stor gryde kyllingekarry søndag, så har du aftensmad til tre dage. Kyllingen er på tilbud i denne uge, og hele ugen lander på ca. 140 kr.",
       chip: "Husket: budget 150 kr om ugen",
     },
     { who: "user", text: "jeg har også en halv pose ris og noget spinat der skal bruges" },

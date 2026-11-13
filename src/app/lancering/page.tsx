@@ -175,7 +175,7 @@ export default function Launch() {
                 <CountUp to={204} />
               </p>
               <h3 className="mt-3 text-[19px] font-semibold">Kædetilbud, opdateret hver dag</h3>
-              <p className="mt-1.5 text-[15px] leading-relaxed text-white/55">Fra Salling-kæderne og REMA 1000, automatisk hver dag.</p>
+              <p className="mt-1.5 text-[15px] leading-relaxed text-white/55">Fra dagligvarekæderne, automatisk hver dag.</p>
             </Reveal>
 
             {/* Klar: hele vejen */}

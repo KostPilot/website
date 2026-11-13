@@ -8,8 +8,8 @@ function Prefs() {
     ["150 kr om ugen", true],
     ["2 personer", true],
     ["Ingen svinekød", false],
-    ["Netto", true],
-    ["REMA 1000", true],
+    ["Ugens tilbud", true],
+    ["Vegetar to dage", true],
     ["Glutenfri", false],
     ["Hurtige retter", true],
   ] as const;
