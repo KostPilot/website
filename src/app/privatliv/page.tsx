@@ -199,6 +199,15 @@ export default function Privacy() {
                 Privacy Framework. Apple leverer App Store og TestFlight som selvstændig dataansvarlig efter Apples egne vilkår.
               </p>
               <p>Tilbud og priser henter vi fra dagligvarekæderne. Vi sender ingen oplysninger om dig til dem.</p>
+              <p>
+                <strong>Vejret:</strong> Har du vejret slået til, spørger appen Danmarks Meteorologiske Institut (<strong>DMI</strong>) direkte om
+                udsigten for din landsdel, ud fra dit postnummer og aldrig din præcise placering. DMI ser derfor din telefons IP-adresse, ligesom når du
+                besøger dmi.dk. Vi gemmer intet om det hos os, og du kan slå vejret fra under Præferencer.
+              </p>
+              <p>
+                <strong>Stregkoder:</strong> Scanner du en stregkode, sendes kun stregkoden til <strong>Open Food Facts</strong> for at finde varens navn.
+                Kameraets billede bliver på telefonen.
+              </p>
             </Section>
 
             <Section id="hvorlaenge" title="7. Hvor længe vi gemmer dem">
