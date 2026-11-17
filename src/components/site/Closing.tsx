@@ -101,15 +101,15 @@ export function Footer() {
             <LinkedInIcon />
             LinkedIn
           </a>
-          <a href="mailto:oliver@podra.dk" className="transition hover:text-white">
-            oliver@podra.dk
+          <a href="mailto:kontakt@podra.dk" className="transition hover:text-white">
+            kontakt@podra.dk
           </a>
           <p>© {new Date().getFullYear()} Podra · Lavet i Danmark</p>
         </div>
       </div>
       {/* Virksomhedsoplysninger (e-handelslovens § 7): navn, CVR, adresse og e-mail */}
       <p className="mx-auto mt-6 max-w-6xl px-5 text-center text-[12px] text-white/40 sm:text-left">
-        PODRA ApS · CVR 46414241 · Helgolandsgade 62, 9000 Aalborg · oliver@podra.dk
+        PODRA ApS · CVR 46414241 · Helgolandsgade 62, 9000 Aalborg · kontakt@podra.dk
       </p>
     </footer>
   );

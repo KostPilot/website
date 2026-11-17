@@ -43,7 +43,7 @@ const ORGANIZATION = {
   legalName: "PODRA ApS",
   url: "https://podra.dk",
   logo: "https://podra.dk/logo/app-ikon-512.png",
-  email: "oliver@podra.dk",
+  email: "kontakt@podra.dk",
   address: { "@type": "PostalAddress", addressLocality: "Aalborg", addressCountry: "DK" },
   founder: [
     { "@type": "Person", name: "Oliver" },

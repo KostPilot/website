@@ -101,7 +101,7 @@ export default function Privacy() {
             <Section id="hvem" title="1. Hvem er vi">
               <p>
                 Dataansvarlig er <strong>PODRA ApS</strong> (tidligere KostPilot ApS), CVR 46414241, Helgolandsgade 62, 9000 Aalborg. Skriv til os på{" "}
-                <A href="mailto:oliver@podra.dk">oliver@podra.dk</A>. Vi har ikke en databeskyttelsesrådgiver, fordi vi ikke er forpligtet til det,
+                <A href="mailto:privatliv@podra.dk">privatliv@podra.dk</A>. Vi har ikke en databeskyttelsesrådgiver, fordi vi ikke er forpligtet til det,
                 men henvendelser om persondata besvares af stifterne.
               </p>
             </Section>
@@ -272,7 +272,7 @@ export default function Privacy() {
             <Section id="kontakt" title="11. Ændringer og kontakt">
               <p>
                 Ændrer vi, hvordan vi bruger dine oplysninger, opdaterer vi siden her. Er ændringen væsentlig, beder vi dig acceptere den i appen. Spørgsmål?
-                Skriv til <A href="mailto:oliver@podra.dk">oliver@podra.dk</A>.
+                Skriv til <A href="mailto:privatliv@podra.dk">privatliv@podra.dk</A>.
               </p>
               <p>
                 <Link href="/" className="text-[#bd5e3c] underline underline-offset-4">
