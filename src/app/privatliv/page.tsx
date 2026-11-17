@@ -190,7 +190,7 @@ export default function Privacy() {
                   <strong>Cloudflare</strong> leverer hjemmesiden, ventelisten og invitationslinks.
                 </li>
                 <li>
-                  <strong>Zoho</strong> leverer vores e-mail (EU-datacenter). Skriver du til os, ligger din mail dér.
+                  <strong>Microsoft</strong> leverer vores e-mail (Microsoft 365). Skriver du til os, ligger din mail dér.
                 </li>
               </ul>
               <p>
