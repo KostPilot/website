@@ -107,7 +107,8 @@ function createSupabaseHeaders(
 ) {
   return {
     apikey: serviceRoleKey,
-    Authorization: `Bearer ${serviceRoleKey}`,
+    // Nye Supabase-nøgler (sb_secret_...) er ikke JWT'er og må kun stå i apikey. Gamle service_role-nøgler (eyJ...) sendes også som Bearer.
+    ...(serviceRoleKey.startsWith("eyJ") ? { Authorization: `Bearer ${serviceRoleKey}` } : {}),
     Accept: "application/json",
     "Accept-Profile": schema,
     ...(includeContentProfile ? { "Content-Profile": schema } : {}),

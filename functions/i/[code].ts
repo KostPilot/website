@@ -20,7 +20,8 @@ async function logOpen(env: InviteEnv, code: string) {
   if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) return;
   const headers = {
     apikey: env.SUPABASE_SERVICE_ROLE_KEY,
-    Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`,
+    // sb_secret_-nøgler kun i apikey; gamle JWT-nøgler også som Bearer.
+    ...(env.SUPABASE_SERVICE_ROLE_KEY.startsWith("eyJ") ? { Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}` } : {}),
     "Content-Type": "application/json",
   };
   const found = await fetch(`${env.SUPABASE_URL}/rest/v1/referral_codes?select=code&code=eq.${encodeURIComponent(code)}`, { headers });
