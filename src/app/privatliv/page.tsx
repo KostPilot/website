@@ -8,7 +8,7 @@ import { Footer } from "@/components/site/Closing";
 // PRIVACY_VERSION i appen (src/services/signupHelpers.ts), så brugerne bedes acceptere igen.
 export const metadata: Metadata = {
   title: "Privatlivspolitik",
-  description: "Hvilke oplysninger KostPilot gemmer, hvorfor, hvor, hvor længe, og hvordan du får indsigt, trækker samtykke tilbage eller sletter dem.",
+  description: "Hvilke oplysninger Podra gemmer, hvorfor, hvor, hvor længe, og hvordan du får indsigt, trækker samtykke tilbage eller sletter dem.",
   alternates: { canonical: "/privatliv" },
 };
 
@@ -65,7 +65,7 @@ export default function Privacy() {
           <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#bd5e3c]">Privatliv</p>
           <h1 className="font-display mt-4 text-[42px] leading-[1.05] sm:text-[60px]">Dine data. Kort og ærligt.</h1>
           <p className="mt-6 text-[18px] leading-relaxed text-[#4a4a4a]">
-            KostPilot skal hjælpe dig med at spise godt for færre penge. Til det skal appen vide lidt om dig. Her står præcis hvad, hvorfor, hvor længe, og
+            Podra skal hjælpe dig med at spise godt for færre penge. Til det skal appen vide lidt om dig. Her står præcis hvad, hvorfor, hvor længe, og
             hvordan du bestemmer over det.
           </p>
 
@@ -100,8 +100,8 @@ export default function Privacy() {
           <div className="mt-6">
             <Section id="hvem" title="1. Hvem er vi">
               <p>
-                Dataansvarlig er <strong>KostPilot ApS</strong>, CVR 46414241, Helgolandsgade 62, 9000 Aalborg. Skriv til os på{" "}
-                <A href="mailto:oliver@kost-pilot.dk">oliver@kost-pilot.dk</A>. Vi har ikke en databeskyttelsesrådgiver, fordi vi ikke er forpligtet til det,
+                Dataansvarlig er <strong>PODRA ApS</strong> (tidligere KostPilot ApS), CVR 46414241, Helgolandsgade 62, 9000 Aalborg. Skriv til os på{" "}
+                <A href="mailto:oliver@podra.dk">oliver@podra.dk</A>. Vi har ikke en databeskyttelsesrådgiver, fordi vi ikke er forpligtet til det,
                 men henvendelser om persondata besvares af stifterne.
               </p>
             </Section>
@@ -168,8 +168,8 @@ export default function Privacy() {
                 vi oplysningerne med det samme.
               </p>
               <p>
-                <strong>Du skal være mindst 15 år</strong> for at bruge KostPilot. I Danmark kræver det samtykke fra en forælder at behandle
-                persondata om børn under 15 år (databeskyttelseslovens § 6), og KostPilot er ikke lavet til børn.
+                <strong>Du skal være mindst 15 år</strong> for at bruge Podra. I Danmark kræver det samtykke fra en forælder at behandle
+                persondata om børn under 15 år (databeskyttelseslovens § 6), og Podra er ikke lavet til børn.
               </p>
             </Section>
 
@@ -249,7 +249,7 @@ export default function Privacy() {
             <Section id="hjemmesiden" title="9. Hjemmesiden, ventelisten og invitationer">
               <p>
                 Skriver du dig på ventelisten, gemmer vi din e-mail og, hvis du vil, navn, alder og by. Vi bruger det kun til at sende dig en invitation og
-                besked, når KostPilot åbner. Skriv til os, så sletter vi dig fra listen.
+                besked, når Podra åbner. Skriv til os, så sletter vi dig fra listen.
               </p>
               <p>
                 Åbner nogen dit invitationslink, tæller vi det på din kode. Vi gemmer ikke IP-adresse eller andet, der kan identificere den, der åbnede
@@ -272,7 +272,7 @@ export default function Privacy() {
             <Section id="kontakt" title="11. Ændringer og kontakt">
               <p>
                 Ændrer vi, hvordan vi bruger dine oplysninger, opdaterer vi siden her. Er ændringen væsentlig, beder vi dig acceptere den i appen. Spørgsmål?
-                Skriv til <A href="mailto:oliver@kost-pilot.dk">oliver@kost-pilot.dk</A>.
+                Skriv til <A href="mailto:oliver@podra.dk">oliver@podra.dk</A>.
               </p>
               <p>
                 <Link href="/" className="text-[#bd5e3c] underline underline-offset-4">

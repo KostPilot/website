@@ -17,7 +17,7 @@ export function Waitlist() {
         <Reveal delay={100}>
           <h2 className="font-display mt-6 text-[40px] leading-[1.05] sm:text-[62px]">Vær blandt de første.</h2>
           <p className="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-white/70">
-            KostPilot er i lukket beta. Skriv dig op, så får du en invitation, når vi åbner på iPhone.
+            Podra er i lukket beta. Skriv dig op, så får du en invitation, når vi åbner på iPhone.
           </p>
         </Reveal>
         <Reveal delay={200} className="mt-10 flex w-full justify-center">
@@ -50,7 +50,7 @@ export function MeetTheTeam() {
       <Reveal className="mx-auto grid max-w-6xl items-center gap-10 overflow-hidden rounded-[36px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_24px_60px_-30px_rgba(0,0,0,0.25)] md:grid-cols-2 md:gap-0">
         <div className="relative h-[320px] md:h-full md:min-h-[460px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/historien/grundlaeggerne.jpg" alt="Kasper og Oliver fortæller om KostPilot" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[50%_30%]" />
+          <img src="/historien/grundlaeggerne.jpg" alt="Kasper og Oliver fortæller om Podra" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-[50%_30%]" />
         </div>
         <div className="px-8 pb-10 md:px-14 md:py-14">
           <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#bd5e3c]">Holdet bag</p>
@@ -58,7 +58,7 @@ export function MeetTheTeam() {
             To venner. Én <em className="font-normal italic text-[#bd5e3c]">skør</em> idé.
           </h2>
           <p className="mt-5 max-w-md text-[17px] leading-relaxed text-[#4a4a4a]">
-            Oliver og Kasper er 24 år og startede KostPilot, fordi SU&apos;en skulle række længere. Læs om regnestykket, der satte det hele i gang.
+            Oliver og Kasper er 24 år og startede Podra, fordi SU&apos;en skulle række længere. Læs om regnestykket, der satte det hele i gang.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link href="/historien" className="rounded-full bg-[#1c1c1c] px-6 py-3 text-[15px] font-semibold text-white transition hover:bg-black">
@@ -86,7 +86,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-white/10 px-5 pt-8 text-[13px] sm:flex-row">
         <div className="flex items-center gap-2.5 text-white/80">
           <LogoMark size={22} cord="#0f0d0c" />
-          <span className="font-display text-[16px]">KostPilot</span>
+          <span className="font-display text-[16px]">Podra</span>
         </div>
         <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-6">
           {PAGES.map((p) => (
@@ -101,15 +101,15 @@ export function Footer() {
             <LinkedInIcon />
             LinkedIn
           </a>
-          <a href="mailto:oliver@kost-pilot.dk" className="transition hover:text-white">
-            oliver@kost-pilot.dk
+          <a href="mailto:oliver@podra.dk" className="transition hover:text-white">
+            oliver@podra.dk
           </a>
-          <p>© {new Date().getFullYear()} KostPilot · Lavet i Danmark</p>
+          <p>© {new Date().getFullYear()} Podra · Lavet i Danmark</p>
         </div>
       </div>
       {/* Virksomhedsoplysninger (e-handelslovens § 7): navn, CVR, adresse og e-mail */}
       <p className="mx-auto mt-6 max-w-6xl px-5 text-center text-[12px] text-white/40 sm:text-left">
-        KostPilot ApS · CVR 46414241 · Helgolandsgade 62, 9000 Aalborg · oliver@kost-pilot.dk
+        PODRA ApS · CVR 46414241 · Helgolandsgade 62, 9000 Aalborg · oliver@podra.dk
       </p>
     </footer>
   );

@@ -9,18 +9,18 @@ import { CountUp } from "@/components/site/motion";
 
 export const metadata: Metadata = {
   title: "Lancering",
-  description: "KostPilot er i lukket beta, og næste stop er TestFlight. Se hvor langt vi er mod App Store, og skriv dig på ventelisten.",
+  description: "Podra er i lukket beta, og næste stop er TestFlight. Se hvor langt vi er mod App Store, og skriv dig på ventelisten.",
   alternates: { canonical: "/lancering" },
   openGraph: {
     type: "article",
-    siteName: "KostPilot",
+    siteName: "Podra",
     locale: "da_DK",
     url: "/lancering",
-    title: "Lancering · KostPilot",
-    description: "KostPilot er i lukket beta, og næste stop er TestFlight. Se hvor langt vi er mod App Store, og skriv dig på ventelisten.",
-    images: [{ url: "/og/lancering.jpg", width: 1200, height: 630, alt: "KostPilot til iPhone. Snart." }],
+    title: "Lancering · Podra",
+    description: "Podra er i lukket beta, og næste stop er TestFlight. Se hvor langt vi er mod App Store, og skriv dig på ventelisten.",
+    images: [{ url: "/og/lancering.jpg", width: 1200, height: 630, alt: "Podra til iPhone. Snart." }],
   },
-  twitter: { card: "summary_large_image", title: "Lancering · KostPilot", description: "KostPilot er i lukket beta, og næste stop er TestFlight. Se hvor langt vi er mod App Store, og skriv dig på ventelisten.", images: ["/og/lancering.jpg"] },
+  twitter: { card: "summary_large_image", title: "Lancering · Podra", description: "Podra er i lukket beta, og næste stop er TestFlight. Se hvor langt vi er mod App Store, og skriv dig på ventelisten.", images: ["/og/lancering.jpg"] },
 };
 
 // Ærlig status uden datoer. Ret rækkerne, når vi rykker et trin (se docs/STATUS_OG_PLAN.md i appen).
@@ -59,7 +59,7 @@ export default function Launch() {
           <div className="horizon" />
           <div className="relative">
             <p className="rise text-[13px] font-semibold uppercase tracking-[0.22em] text-[#a1a1a6]" style={{ "--delay": "300ms" } as React.CSSProperties}>
-              KostPilot til iPhone
+              Podra til iPhone
             </p>
             <h1 className="rise snart font-display mt-5 text-[96px] leading-[0.9] sm:text-[180px]" style={{ "--delay": "450ms" } as React.CSSProperties}>
               <span className="accent-text">Snart.</span>

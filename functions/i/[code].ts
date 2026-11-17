@@ -1,4 +1,4 @@
-// Invitationslink fra "Giv en ven en pilot" i appen: kost-pilot.dk/i/KP-XXXXX
+// Invitationslink fra "Giv en ven en pilot" i appen: podra.dk/i/KP-XXXXX (gamle links på kost-pilot.dk viderestilles)
 // Registrerer at linket blev åbnet (referral_events) og viser en lille side i sidens mørke stil.
 
 type InviteEnv = {
@@ -42,10 +42,10 @@ export async function onRequestGet(context: PagesFunctionContext) {
   if (valid) context.waitUntil(logOpen(context.env, code).catch(() => {}));
 
   const html = `<!doctype html><html lang="da"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Du har fået en KostPilot</title>
+<title>Du har fået Podra</title>
 <meta name="description" content="En ven har givet dig en pilot: madplanen, der betaler sig selv.">
 <meta property="og:title" content="En ven har givet dig en pilot.">
-<meta property="og:description" content="KostPilot finder ugens tilbud og laver en madplan, du har lyst til.">
+<meta property="og:description" content="Podra finder ugens tilbud og laver en madplan, du har lyst til.">
 <style>
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;background:radial-gradient(90% 55% at 50% 0%,rgba(212,112,76,.38),rgba(212,112,76,0) 70%),#0f0d0c;color:#fff;
@@ -62,10 +62,10 @@ p{color:rgba(255,255,255,.72);margin:0 0 26px}
 ${LOGO}
 <p class="eyebrow">Giv en ven en pilot</p>
 <h1>En ven har givet dig en pilot.</h1>
-<p>KostPilot finder ugens tilbud, laver en madplan du har lyst til, og holder styr på budget og indkøb. Appen er i lukket beta lige nu. Skriv dig op, så får du besked, når du kan hente den.</p>
+<p>Podra finder ugens tilbud, laver en madplan du har lyst til, og holder styr på budget og indkøb. Appen er i lukket beta lige nu. Skriv dig op, så får du besked, når du kan hente den.</p>
 ${valid ? `<div class="code">${esc(code)}</div>` : ""}
 <a class="btn" href="/#venteliste">Skriv dig på ventelisten</a>
-<a class="link" href="/">Se hvad KostPilot kan</a>
+<a class="link" href="/">Se hvad Podra kan</a>
 </main></body></html>`;
 
   return new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });

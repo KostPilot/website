@@ -19,7 +19,7 @@ export default function Hero() {
           Madplanen, der <span className="accent-text">betaler sig selv.</span>
         </h1>
         <p className="rise mx-auto mt-6 max-w-2xl text-[17px] leading-relaxed text-white/70 sm:text-[19px]" style={{ "--delay": "1400ms" } as React.CSSProperties}>
-          KostPilot finder ugens bedste tilbud, laver en madplan du faktisk har lyst til, og holder styr på indkøb, budget og køkken. Du spiser bedre og bruger færre penge uden at tænke over det.
+          Podra finder ugens bedste tilbud, laver en madplan du faktisk har lyst til, og holder styr på indkøb, budget og køkken. Du spiser bedre og bruger færre penge uden at tænke over det.
         </p>
         <div className="rise mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row" style={{ "--delay": "1550ms" } as React.CSSProperties}>
           <a href="#venteliste" className="rounded-full bg-[#D4704C] px-7 py-3.5 text-[16px] font-semibold text-white transition hover:bg-[#BD5E3C]">

@@ -99,7 +99,7 @@ export default function HowItWorks() {
         <Reveal className="text-center">
           <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#bd5e3c]">Sådan virker det</p>
           <h2 className="font-display mt-4 text-[40px] leading-[1.05] sm:text-[64px]">Tre trin. Så kører det.</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-[18px] leading-relaxed text-[#4a4a4a]">Du fortæller det én gang. Derefter laver KostPilot ugen for dig, hver uge.</p>
+          <p className="mx-auto mt-5 max-w-2xl text-[18px] leading-relaxed text-[#4a4a4a]">Du fortæller det én gang. Derefter laver Podra ugen for dig, hver uge.</p>
         </Reveal>
 
         <div className="relative mt-20">

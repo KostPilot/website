@@ -4,8 +4,8 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "KostPilot",
-    short_name: "KostPilot",
+    name: "Podra",
+    short_name: "Podra",
     description: "Madplanen, der betaler sig selv.",
     start_url: "/",
     display: "browser",

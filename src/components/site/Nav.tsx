@@ -35,9 +35,9 @@ export default function Nav() {
       } backdrop-blur-xl`}
     >
       <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="KostPilot, til forsiden">
+        <Link href="/" className="flex items-center gap-2.5" aria-label="Podra, til forsiden">
           <LogoMark size={26} cord={light ? "#f8f5f0" : "#0f0d0c"} />
-          <span className="font-display text-[19px]">KostPilot</span>
+          <span className="font-display text-[19px]">Podra</span>
         </Link>
         <div className="flex items-center gap-1 text-[14px] sm:gap-2">
           {PAGES.map((p) => (

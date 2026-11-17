@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* KostPilots designtokens -- samme som i appen (theme/design-tokens.json). */
+/* Podras designtokens -- samme som i appen (theme/design-tokens.json). */
 :root {
   --paper: #f8f5f0;
   --paper-tint: #fbf0eb;

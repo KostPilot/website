@@ -5,12 +5,12 @@ import Highlights, { type Highlight } from "./Highlights";
 import DishTweaker from "./DishTweaker";
 import { CountUp, ScrollWords } from "./motion";
 
-// Rækkefølgen følger en uge med KostPilot: tilbud -> plan -> opskrift -> indkøb -> madlavning.
+// Rækkefølgen følger en uge med Podra: tilbud -> plan -> opskrift -> indkøb -> madlavning.
 const FEATURES: Highlight[] = [
   {
     eyebrow: "Ugens tilbud",
     title: "Tilbuddene. Allerede sorteret for dig.",
-    body: "KostPilot følger tilbuddene i dagligvarekæderne og viser dem, der passer til din madplan. Sæt prisvagt på det, du køber tit, så siger den til, når det er billigt igen.",
+    body: "Podra følger tilbuddene i dagligvarekæderne og viser dem, der passer til din madplan. Sæt prisvagt på det, du køber tit, så siger den til, når det er billigt igen.",
     img: "/screens/tilbud.webp",
     alt: "Ugens tilbud i appen",
     fx: "aurora",
@@ -214,7 +214,7 @@ const SOCIAL: Social[] = [
   {
     eyebrow: "Giv en ven en pilot",
     title: "Kender du én, der altid er flad før SU'en?",
-    body: "Del KostPilot med en QR-kode formet som vores logo, eller send den med AirDrop. Snart: sparedyst, hvor I ser, hvem der sparer flest procent.",
+    body: "Del Podra med en QR-kode formet som vores logo, eller send den med AirDrop. Snart: sparedyst, hvor I ser, hvem der sparer flest procent.",
     img: "/screens/gave.webp",
     alt: "Giv en ven en pilot med en QR-kode",
     fx: "gift",

@@ -42,7 +42,7 @@ function Flap({ text, width, start, tone = "text-white" }: { text: string; width
 
 type Row = { flight: string; dest: string; status: string; tone: string; live?: boolean };
 
-/** Afgangstavlen: hvor KostPilot er på vej hen. Ingen datoer, kun ærlig status. */
+/** Afgangstavlen: hvor Podra er på vej hen. Ingen datoer, kun ærlig status. */
 export default function DepartureBoard({ rows }: { rows: Row[] }) {
   const ref = useRef<HTMLDivElement>(null);
   const [start, setStart] = useState(false);
@@ -56,7 +56,7 @@ export default function DepartureBoard({ rows }: { rows: Row[] }) {
 
   return (
     <div ref={ref} className="w-full overflow-hidden rounded-[28px] bg-[#141110] p-5 ring-1 ring-white/10 sm:p-8">
-      <ul className="flex flex-col gap-5 md:gap-3" aria-label="KostPilots vej til App Store">
+      <ul className="flex flex-col gap-5 md:gap-3" aria-label="Podras vej til App Store">
         {rows.map((r) => (
           <li key={r.flight} className="flex flex-col gap-1.5 md:flex-row md:items-center md:gap-4">
             <span className="sr-only">

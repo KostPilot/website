@@ -1,5 +1,5 @@
 /**
- * KostPilots logomærke (samme geometri som LogoMark i appen, viewBox 0-200).
+ * Podras logomærke (samme geometri som LogoMark i appen, viewBox 0-200).
  * animate: fladerne popper ind, og snoren tegnes (CSS i globals.css; slået fra ved reduced motion).
  * variant: "cord" = med snoren i midten, "plain" = uden snor.
  * Uden variant: snoren vises kun over SMALL_MAX px; i små størrelser bliver den en uklar klump.

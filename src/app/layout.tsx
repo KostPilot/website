@@ -7,28 +7,28 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const serif = Source_Serif_4({ variable: "--font-serif", subsets: ["latin"], weight: ["400", "600"], style: ["normal", "italic"] });
 
 const DESCRIPTION =
-  "KostPilot finder ugens bedste tilbud i dagligvarekæderne, laver en madplan du har lyst til, og holder styr på indkøb, budget og køkken. Kommer snart til iPhone.";
+  "Podra finder ugens bedste tilbud i dagligvarekæderne, laver en madplan du har lyst til, og holder styr på indkøb, budget og køkken. Kommer snart til iPhone.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kost-pilot.dk"),
-  title: { default: "KostPilot · Madplanen, der betaler sig selv", template: "%s · KostPilot" },
+  metadataBase: new URL("https://podra.dk"),
+  title: { default: "Podra · Madplanen, der betaler sig selv", template: "%s · Podra" },
   description: DESCRIPTION,
-  applicationName: "KostPilot",
+  applicationName: "Podra",
   keywords: ["madplan", "tilbud", "tilbudsavis", "indkøbsliste", "madbudget", "SU", "studerende", "opskrifter", "dagligvarer", "supermarked", "app"],
-  authors: [{ name: "KostPilot ApS" }],
+  authors: [{ name: "PODRA ApS" }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    siteName: "KostPilot",
+    siteName: "Podra",
     locale: "da_DK",
     url: "/",
-    title: "KostPilot · Madplanen, der betaler sig selv",
+    title: "Podra · Madplanen, der betaler sig selv",
     description: "Ugens tilbud, en madplan og en indkøbsliste, der laver sig selv. Kommer snart til iPhone.",
-    images: [{ url: "/og/forside.jpg", width: 1200, height: 630, alt: "KostPilot: Madplanen, der betaler sig selv" }],
+    images: [{ url: "/og/forside.jpg", width: 1200, height: 630, alt: "Podra: Madplanen, der betaler sig selv" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "KostPilot · Madplanen, der betaler sig selv",
+    title: "Podra · Madplanen, der betaler sig selv",
     description: "Ugens tilbud, en madplan og en indkøbsliste, der laver sig selv. Kommer snart til iPhone.",
     images: ["/og/forside.jpg"],
   },
@@ -39,11 +39,11 @@ export const metadata: Metadata = {
 const ORGANIZATION = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "KostPilot",
-  legalName: "KostPilot ApS",
-  url: "https://kost-pilot.dk",
-  logo: "https://kost-pilot.dk/logo/app-ikon-512.png",
-  email: "oliver@kost-pilot.dk",
+  name: "Podra",
+  legalName: "PODRA ApS",
+  url: "https://podra.dk",
+  logo: "https://podra.dk/logo/app-ikon-512.png",
+  email: "oliver@podra.dk",
   address: { "@type": "PostalAddress", addressLocality: "Aalborg", addressCountry: "DK" },
   founder: [
     { "@type": "Person", name: "Oliver" },

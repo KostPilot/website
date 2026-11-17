@@ -10,18 +10,18 @@ import { LINKEDIN } from "@/components/site/links";
 
 export const metadata: Metadata = {
   title: "Historien",
-  description: "Om to venner på 24, en SU der skulle række længere, og regnestykket, der blev til KostPilot. Fortalt af Oliver, medstifter.",
+  description: "Om to venner på 24, en SU der skulle række længere, og regnestykket, der blev til Podra. Fortalt af Oliver, medstifter.",
   alternates: { canonical: "/historien" },
   openGraph: {
     type: "article",
-    siteName: "KostPilot",
+    siteName: "Podra",
     locale: "da_DK",
     url: "/historien",
-    title: "Historien · KostPilot",
-    description: "Om to venner på 24, en SU der skulle række længere, og regnestykket, der blev til KostPilot. Fortalt af Oliver, medstifter.",
+    title: "Historien · Podra",
+    description: "Om to venner på 24, en SU der skulle række længere, og regnestykket, der blev til Podra. Fortalt af Oliver, medstifter.",
     images: [{ url: "/og/historien.jpg", width: 1200, height: 630, alt: "Kasper og Oliver: To venner. Én skør idé." }],
   },
-  twitter: { card: "summary_large_image", title: "Historien · KostPilot", description: "Om to venner på 24, en SU der skulle række længere, og regnestykket, der blev til KostPilot. Fortalt af Oliver, medstifter.", images: ["/og/historien.jpg"] },
+  twitter: { card: "summary_large_image", title: "Historien · Podra", description: "Om to venner på 24, en SU der skulle række længere, og regnestykket, der blev til Podra. Fortalt af Oliver, medstifter.", images: ["/og/historien.jpg"] },
 };
 
 const FOUNDERS = [
@@ -90,7 +90,7 @@ export default function Story() {
         </section>
 
         {/* Billedet af os vokser til hele skærmen */}
-        <ExpandingCard src="/historien/grundlaeggerne.jpg" alt="Kasper og Oliver fortæller om KostPilot" position="50% 32%">
+        <ExpandingCard src="/historien/grundlaeggerne.jpg" alt="Kasper og Oliver fortæller om Podra" position="50% 32%">
           <h2 className="font-display mx-auto max-w-4xl text-[44px] leading-[1.02] sm:text-[88px]">
             To venner. Én <em className="font-normal italic">skør</em> idé.
           </h2>
@@ -151,7 +151,7 @@ export default function Story() {
           <ScrollWords
             dim="rgba(28,28,28,0.14)"
             className="font-display text-[32px] leading-[1.18] sm:text-[52px]"
-            text="Tilbudsavisen er kun halvdelen. Den anden halvdel er dig: hvad du kan lide, hvad der står i køleskabet, og hvor mange penge der er tilbage før SU'en. Det er det, KostPilot *binder* *sammen.*"
+            text="Tilbudsavisen er kun halvdelen. Den anden halvdel er dig: hvad du kan lide, hvad der står i køleskabet, og hvor mange penge der er tilbage før SU'en. Det er det, Podra *binder* *sammen.*"
           />
         </section>
 
@@ -207,7 +207,7 @@ export default function Story() {
             className="flex items-center gap-2 rounded-full px-5 py-2.5 text-[15px] font-medium text-[#1c1c1c] ring-1 ring-black/15 transition hover:ring-black/30"
           >
             <LinkedInIcon size={15} />
-            Følg KostPilot på LinkedIn
+            Følg Podra på LinkedIn
           </a>
         </Reveal>
 

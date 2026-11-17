@@ -28,7 +28,7 @@ function PassHead() {
       <div className="flex items-center justify-between bg-gradient-to-r from-[#bd5e3c] via-[#d4704c] to-[#e08560] px-6 py-4 text-white sm:px-8">
         <div className="flex items-center gap-2.5">
           <LogoMark size={24} cord="#d4704c" />
-          <span className="font-display text-[18px]">KostPilot</span>
+          <span className="font-display text-[18px]">Podra</span>
         </div>
         <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/85">Boardingkort</span>
       </div>
@@ -232,7 +232,7 @@ export default function WaitlistSignupForm() {
       </div>
 
       <p id="waitlist-email-help" className="mt-4 text-center text-[13px] leading-relaxed text-white/45">
-        Vi bruger kun din e-mail til at sende din invitation og besked, når KostPilot åbner.
+        Vi bruger kun din e-mail til at sende din invitation og besked, når Podra åbner.
       </p>
     </form>
   );
@@ -249,8 +249,8 @@ function WaitlistJoined({ email, name, already, onAnother }: { email: string; na
   }, []);
 
   async function share() {
-    const url = "https://kost-pilot.dk";
-    const data = { title: "KostPilot", text: "Madplanen, der betaler sig selv. Skriv dig på ventelisten:", url };
+    const url = "https://podra.dk";
+    const data = { title: "Podra", text: "Madplanen, der betaler sig selv. Skriv dig på ventelisten:", url };
     try {
       if (navigator.share) {
         await navigator.share(data);
@@ -284,7 +284,7 @@ function WaitlistJoined({ email, name, already, onAnother }: { email: string; na
           </h3>
           <p className="mt-2 text-[16px] leading-relaxed text-[#4a4a4a]">
             {already
-              ? "Vi har din e-mail, og du hører fra os, så snart KostPilot åbner på iPhone."
+              ? "Vi har din e-mail, og du hører fra os, så snart Podra åbner på iPhone."
               : "Du er blandt de første, der får en invitation, når vi åbner for TestFlight. Vi skriver til dig."}
           </p>
 
@@ -301,7 +301,7 @@ function WaitlistJoined({ email, name, already, onAnother }: { email: string; na
             </button>
           </div>
           <p className="mt-3 min-h-5 text-[13px] text-black/50" aria-live="polite">
-            {shared === "copied" ? "Linket er kopieret." : shared === "failed" ? "Kunne ikke dele. Linket er kost-pilot.dk" : ""}
+            {shared === "copied" ? "Linket er kopieret." : shared === "failed" ? "Kunne ikke dele. Linket er podra.dk" : ""}
           </p>
         </div>
       </div>

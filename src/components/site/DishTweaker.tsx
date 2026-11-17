@@ -70,7 +70,7 @@ export default function DishTweaker() {
           Din yndlingsret. Lige som <span className="accent-text">du</span> kan lide den.
         </h3>
         <p className="mt-5 text-[17px] leading-relaxed text-white/70">
-          Få spaghetti med kødsovs, som du kender den. Eller lad KostPilot tilpasse den: med mindre kød, når kødet er dyrt i den uge, vegetar, uden laktose eller med det
+          Få spaghetti med kødsovs, som du kender den. Eller lad Podra tilpasse den: med mindre kød, når kødet er dyrt i den uge, vegetar, uden laktose eller med det
           lille tweak, du altid selv laver. Motoren bytter ingredienserne ud og husker, hvordan du kan lide dine retter.
         </p>
         <p className="mt-6 text-[14px] leading-relaxed text-white/45">
